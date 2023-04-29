@@ -1,0 +1,36 @@
+{% schema %}
+  {
+    "name": "Doctor Review",
+    "settings": []
+  }
+{% endschema %}
+
+<section class="doc_review p-0 m-0 row justify-content-center">
+  <div class="col-sm-12 col-md-4 col-lg-4 p-0">
+    <img src="{{ 'doctor.png' | asset_url }}" class="img-fluid" />
+  </div>
+  <div class="col-sm-12 col-md-8 col-lg-8">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-3">
+        <span class="quote1">
+          <img src="{{ 'quote.png' | asset_url }}" class="img-fluid" />
+        </span>
+      </div>
+      <div class="col-lg-6 text-center ">
+          <h4 class="mb-5 d-block">Oral Health is the gateway to overall health, and it all starts in your mouth.</h4>
+          <h4 class="mt-5 d-block">- Dr. Alexandra Kantor</h4>
+      </div>
+      <div class="col-lg-3">
+        <span class="quote2">
+          <img src="{{ 'quote.png' | asset_url }}" class="img-fluid" />
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

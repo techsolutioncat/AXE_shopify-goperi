@@ -1,0 +1,68 @@
+{% schema %}
+  {
+    "name": "Review",
+    "settings": []
+  }
+{% endschema %}
+
+
+<section class="review_section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div id="review-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4 col-lg-4 p-5">
+                <img src="{{ 'jessica.png' | asset_url }}" class="img-fluid" alt="Reviewer Image"/>
+              </div>
+              <div class="col-md-8 col-lg-8">
+                <div class="revi_desk">
+                  <h2 class="card-title mb-4">Jessica’s Journey</h2>
+                    <p class="card-text  mb-5">
+                      “I suffer from dental anxiety and haven’t seen a dentist in over 20 years. My gums would bleed every time I brushed and I had tooth pain all the time. I came across peri and liked that I could take the test from home. Peri allowed me to make the first step of realizing that my health was in serious trouble and I am proud to say that I made a dental appointment and am getting the treatment that I desperately need. This is the first time in a very long time that my mouth feels healthy and I’m confident to show my smile again!”
+                    </p>
+                    <h5 class="card-title  mt-2">Jessica Smith</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+           <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4 col-lg-4 p-5">
+                <img src="{{ 'chris.png' | asset_url }}" class="img-fluid" alt="Reviewer Image"/>
+              </div>
+              <div class="col-md-8 col-lg-8">
+                <div class="revi_desk">
+                  <h2 class="card-title mb-4">Chris’s Journey</h2>
+                    <p class="card-text  mb-5">
+                      “A few months ago, my girlfriend started to complain about my bad breath, and it made me feel embarrassed and uncomfortable. I tried different mouthwashes but they only covered it up temporarily. I took the peri oral health test and my gum disease score was not good. I went to the dentist to get my gums checked out and they confirmed that I had gum disease. After getting a deep cleaning, I almost immediately noticed my mouth feeling cleaning. Since then, I’m proud to say there have been zero complaints about my breath from my girlfriend.”
+                    </p>
+                    <h5 class="card-title  mt-2">Chris Heller</h5>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#review-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#review-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{% stylesheet %}
+  
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,131 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "ccdb6597-a00e-432d-9dc1-eab3a0a7c6de": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }} Oral Health Test",
+            "text_style": "subtitle"
+          }
+        },
+        "f4723dc8-38b3-47af-8f6a-832bf967f512": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "42ae9564-5ade-4774-8278-1d8ca5ac8b77": {
+          "type": "description",
+          "settings": {}
+        },
+        "62529b11-36cc-49e2-ac38-8ac9ded1c423": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "66e8f824-4d88-4317-a825-ae28b91d9e34": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "ccdb6597-a00e-432d-9dc1-eab3a0a7c6de",
+        "f4723dc8-38b3-47af-8f6a-832bf967f512",
+        "42ae9564-5ade-4774-8278-1d8ca5ac8b77",
+        "62529b11-36cc-49e2-ac38-8ac9ded1c423",
+        "66e8f824-4d88-4317-a825-ae28b91d9e34"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": false,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {}
+    },
+    "process": {
+      "type": "process",
+      "settings": {}
+    },
+    "custom_review": {
+      "type": "custom_review",
+      "settings": {}
+    },
+    "oral_plan": {
+      "type": "oral_plan",
+      "settings": {}
+    },
+    "single_review": {
+      "type": "single_review",
+      "settings": {}
+    },
+    "168269408902ee41ed": {
+      "type": "apps",
+      "blocks": {
+        "fe2595d6-768a-4286-bc45-d46d02aef5a9": {
+          "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "peri-oral-health-test-1"
+          }
+        }
+      },
+      "block_order": [
+        "fe2595d6-768a-4286-bc45-d46d02aef5a9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "product-recommendations",
+    "process",
+    "custom_review",
+    "oral_plan",
+    "single_review",
+    "168269408902ee41ed"
+  ]
+}
