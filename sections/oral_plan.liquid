@@ -7,6 +7,7 @@
     font-family: "RocGrotesk-Bold";
     font-size: 44px;
     line-height: 60px;
+    margin-top: 70px;
   }
 
   #shopify-section-{{ section.id }} section.oral_plan .bb {
@@ -34,7 +35,7 @@
 
 <section class="oral_plan p-0">
   <div class="container">
-    <div class="row">
+    <div class="row section-content">
       <div class="col-lg-7">
         <h2 class="section_title text-left d-block mb-5">
           {% if section.settings.heading != blank %}
@@ -71,45 +72,6 @@
     </div>
   </div>
 </section>
-
-{% comment %}
-  <section class="testing_process">
-      <div class="container">
-        <h2 style="font-family:;">Testing is easy</h2>
-        <div class="row justify-content-center">
-
-            <div class="col-sm-12 col-md-6 col-lg-3">
-              <div class="img_bx">
-                <img src="{{ '01.png' | asset_url }}" class="img-fluid photo" />
-                <span>Order your test</span>
-              </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-3">
-              <div class="img_bx md-no">
-                <img src="{{ '02.png' | asset_url }}" class="img-fluid photo" />
-                <span>Collect your sample</span>
-              </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-3">
-              <div class="img_bx">
-                <img src="{{ '03.png' | asset_url }}" class="img-fluid photo" />
-                <span>Send to analysis lab</span>
-              </div>
-            </div>
-
-            <div class="col-sm-12 col-md-6 col-lg-3">
-              <div class="img_bx no">
-                <img src="{{ '04.png' | asset_url }}" class="img-fluid photo" />
-                <span>View personalized results </span>
-              </div>
-            </div>
-
-        </div>
-      </div>
-  </section>
-{% endcomment %}
 
 {% schema %}
 {

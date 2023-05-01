@@ -255,34 +255,6 @@ section.recommed .box p {
 
 /* section 5*/
 
-.testing_process .img_bx {
-    background-image: url(arrow.png);
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 46px;
-}
-
-.testing_process .img_bx.no {
-    background-image: none;
-}
-
-.testing_process .img_bx img {
-    display: block;
-    width: 60%;
-}
-
-.testing_process .img_bx span {
-    margin: -50px 0 0 8px;
-    display: block;
-    text-align: left;
-    font-size: 22px;
-    font-weight: 500;
-    font-family: RocGrotesk-Medium;
-    color: #000;
-    padding: 0 30px 0 0;
-    line-height: 25px;
-}
-
 /* section 6 */
 
 .doc_review {
