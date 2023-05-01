@@ -1,48 +1,99 @@
-{% schema %}
-  {
-    "name": "Review",
-    "settings": []
+{% style %}
+  #shopify-section-{{ section.id }} .review_section {
+    background: #91cacc;
+    padding: 0 0 100px 0;
   }
-{% endschema %}
 
+  #shopify-section-{{ section.id }} .review_section div#review-carousel {
+    margin: -224px auto 0;
+    position: relative;
+    padding: 40px;
+  }
+
+  #shopify-section-{{ section.id }} .review_section .carousel-inner {
+    background: #6280c0;
+    border: none !important;
+    border-radius: 77px;
+    padding: 50px 130px;
+  }
+
+  #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk {
+    margin: 0 0 0 20px;
+  }
+
+  #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk h2.card-title {
+    font-family: "RocGrotesk-Regular" !important;
+    font-size: 35px;
+    position: relative;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk p {
+    font-family: 'Acumin Pro' !important;
+    font-size: 18px;
+    position: relative;
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk h5 {
+    font-family: "RocGrotesk-Regular" !important;
+    font-size: 22px;
+    position: relative;
+    color: #fff;
+  }
+  #shopify-section-{{ section.id }} .review_section .carousel-inner .carousel-item .card-item {
+    display: flex;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .carousel-control-next-icon {
+    background-image: url({{ 'next.png' | asset_url }});
+    width: 33px;
+    height: 24px;
+  }
+  #shopify-section-{{ section.id }} .carousel-control-prev-icon {
+    background-image: url({{ 'prev.png' | asset_url }});
+    width: 33px;
+    height: 24px;
+  }
+{% endstyle %}
 
 <section class="review_section">
   <div class="container">
     <div class="row justify-content-center">
       <div id="review-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-4 col-lg-4 p-5">
-                <img src="{{ 'jessica.png' | asset_url }}" class="img-fluid" alt="Reviewer Image"/>
-              </div>
-              <div class="col-md-8 col-lg-8">
-                <div class="revi_desk">
-                  <h2 class="card-title mb-4">Jessica’s Journey</h2>
-                    <p class="card-text  mb-5">
-                      “I suffer from dental anxiety and haven’t seen a dentist in over 20 years. My gums would bleed every time I brushed and I had tooth pain all the time. I came across peri and liked that I could take the test from home. Peri allowed me to make the first step of realizing that my health was in serious trouble and I am proud to say that I made a dental appointment and am getting the treatment that I desperately need. This is the first time in a very long time that my mouth feels healthy and I’m confident to show my smile again!”
-                    </p>
-                    <h5 class="card-title  mt-2">Jessica Smith</h5>
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
+                <div class="row card-item">
+                  <div class="col-md-4 col-lg-4">
+                    {% if block.settings.image != blank %}
+                      <img
+                        src="{{ block.settings.image | image_url : width: 350  }}"
+                        class="img-fluid"
+                        alt="Reviewer Image"
+                      >
+                    {% endif %}
+                  </div>
+                  <div class="col-md-8 col-lg-8">
+                    <div class="revi_desk">
+                      {% if block.settings.username != blank %}
+                        <h2 class="card-title mb-4">{{ block.settings.username }}</h2>
+                      {% endif %}
+                      <p class="card-text  mb-5">
+                        {% if block.settings.text != blank %}
+                          {{ block.settings.text }}
+                        {% endif %}
+                      </p>
+                      {% if block.settings.nickname != blank %}
+                        <h5 class="card-title  mt-2">{{ block.settings.nickname }}</h5>
+                      {% endif %}
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-           <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-4 col-lg-4 p-5">
-                <img src="{{ 'chris.png' | asset_url }}" class="img-fluid" alt="Reviewer Image"/>
-              </div>
-              <div class="col-md-8 col-lg-8">
-                <div class="revi_desk">
-                  <h2 class="card-title mb-4">Chris’s Journey</h2>
-                    <p class="card-text  mb-5">
-                      “A few months ago, my girlfriend started to complain about my bad breath, and it made me feel embarrassed and uncomfortable. I tried different mouthwashes but they only covered it up temporarily. I took the peri oral health test and my gum disease score was not good. I went to the dentist to get my gums checked out and they confirmed that I had gum disease. After getting a deep cleaning, I almost immediately noticed my mouth feeling cleaning. Since then, I’m proud to say there have been zero complaints about my breath from my girlfriend.”
-                    </p>
-                    <h5 class="card-title  mt-2">Chris Heller</h5>
-                </div>
-              </div>
-            </div>
-          </div> 
+            {% endfor %}
+          {% endif %}
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#review-carousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,12 +108,42 @@
   </div>
 </section>
 
-
-
-{% stylesheet %}
-  
-
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+{% schema %}
+{
+  "name": "Review",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "block_text",
+      "name": "Block text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "username",
+          "label": "User name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "textarea",
+          "id": "nickname",
+          "label": "Nickname"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Review"
+    }
+  ]
+}
+{% endschema %}

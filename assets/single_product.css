@@ -251,50 +251,6 @@ section.recommed .box p {
     font-weight: 500;
 }
 
-/* section 3 */
-.review_section {
-    background: #91cacc;
-    padding: 0 0 100px 0;
-}
-
-.review_section div#review-carousel {
-    margin: -224px auto 0;
-    position: relative;
-    padding: 40px;
-}
-
-.review_section .carousel-inner {
-    background: #6280C0;
-    border: none !important;
-    border-radius: 77px;
-    padding: 50px 130px;
-}
-
-.review_section .carousel-inner .revi_desk {
-    margin: 0 0 0 20px;
-}
-
-.review_section .carousel-inner .revi_desk h2 {
-    font-family: RocGrotesk-Medium;
-    font-size: 34px;
-    position: relative;
-    color: #fff;
-}
-
-.review_section .carousel-inner .revi_desk p {
-    font-family: Acumin Pro;
-    font-size: 16px;
-    position: relative;
-    color: #fff;
-}
-
-.review_section .carousel-inner .revi_desk h5 {
-    font-family: RocGrotesk-Medium;
-    font-size: 24px;
-    position: relative;
-    color: #fff;
-}
-
 /* section 4 */
 
 section.oral_plan {
