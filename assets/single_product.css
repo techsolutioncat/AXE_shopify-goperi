@@ -253,38 +253,6 @@ section.recommed .box p {
 
 /* section 4 */
 
-section.oral_plan {
-    background-color: #91CACC;
-}
-
-section.oral_plan h2.section_title {
-    font-family: RocGrotesk-Bold;
-    font-size: 51px;
-    line-height: 60px;
-}
-
-section.oral_plan .bb {
-    border-bottom: 2px solid #fff;
-    padding: 0px 0 20px 0;
-    margin: 0 0 20px 0;
-}
-
-section.oral_plan h4 {
-    font-family: RocGrotesk-Medium;
-    font-size: 27px;
-    font-weight: 600;
-    margin: 0;
-}
-
-section.oral_plan p {
-    font-size: 15px;
-    color: #000;
-    line-height: 23px;
-    letter-spacing: initial;
-    font-family: Acumin Pro;
-    font-weight: 400;
-}
-
 /* section 5*/
 
 .testing_process .img_bx {
