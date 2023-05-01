@@ -1,7 +1,7 @@
 {% style %}
   /* section two */
   #shopify-section-{{ section.id }} {
-    padding-bottom: 0px;
+    padding: 0px;
   }
   
   #shopify-section-{{ section.id }} section.sec-2 {
@@ -21,20 +21,20 @@
 
   #shopify-section-{{ section.id }} section.sec-2:before {
     background-image: url({{ section.settings.left_image | image_url: width: 500 }});
-    width: 97px;
+    width: 150px;
     background-position: 0px 0px;
-    left: -35px;
+    left: -60px;
     top: 170px;
-    height: 170px;
+    height: 270px;
   }
 
   #shopify-section-{{ section.id }} section.sec-2:after {
     background-image: url({{ section.settings.right_image | image_url: width: 500 }});
-    width: 190px;
+    width: 270px;
     background-position: 20px 0px;
     right: 0;
     bottom: 290px;
-    height: 190px;
+    height: 270px;
   }
 
   #shopify-section-{{ section.id }} section.sec-2 .sec_area {
