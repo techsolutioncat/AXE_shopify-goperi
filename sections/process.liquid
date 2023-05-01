@@ -1,50 +1,199 @@
-{% schema %}
-  {
-    "name": "Simply Dental health",
-    "settings": []
+{% style %}
+  /* section two */
+  #shopify-section-{{ section.id }} {
+    padding-bottom: 0px;
   }
-{% endschema %}
+  
+  #shopify-section-{{ section.id }} section.sec-2 {
+    background-color: #eff7f7;
+    position: relative;
+    padding: 100px 0 100px 0;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2:after,
+  #shopify-section-{{ section.id }} section.sec-2:before {
+    content: '';
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 999;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2:before {
+    background-image: url({{ section.settings.left_image | image_url: width: 500 }});
+    width: 97px;
+    background-position: 0px 0px;
+    left: -35px;
+    top: 170px;
+    height: 170px;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2:after {
+    background-image: url({{ section.settings.right_image | image_url: width: 500 }});
+    width: 190px;
+    background-position: 20px 0px;
+    right: 0;
+    bottom: 290px;
+    height: 190px;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area {
+    padding: 0 90px 0 50px;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .photo {
+    margin: -35px 0 0 50px;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area h2.section_title {
+    font-family: RocGrotesk-Bold;
+    font-size: 39px;
+    position: relative;
+    line-height: 50px;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area p {
+    font-size: 22px;
+    color: #000;
+    line-height: 30px;
+    letter-spacing: initial;
+    font-family: RocGrotesk-Regular !important;
+    font-weight: 500;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area h2.section_title:before {
+    content: '';
+    background-image: url({{ section.settings.title_image | image_url: width: 300 }});
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+    left: -70px;
+    top: 5px;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area .ul_list {
+    margin: 0;
+    padding: 0;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area .ul_list li {
+    position: relative;
+    list-style: none;
+    font-size: 21px;
+    color: #000;
+    line-height: 26px;
+    font-family: RocGrotesk-Regular;
+    font-weight: 500;
+    padding: 0 0 0 30px;
+    margin: 20px 0;
+  }
+
+  #shopify-section-{{ section.id }} section.sec-2 .sec_area .ul_list li::before {
+    content: '';
+    background-image: url({{ 'chk.jpg' | asset_url }});
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: 0;
+  }
+{% endstyle %}
 
 <section class="sec-2">
   <div class="container">
     <div class="row">
-     
       <div class="col-lg-4 order-3 order-lg-1">
-        <img src="{{ 'photo.png' | asset_url }}" class="img-fluid photo" />
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url: width: 1000 }}" class="img-fluid photo">
+        {% endif %}
       </div>
       <div class="col-lg-1 order-2 order-lg-2">&nbsp;</div>
       <div class="col-lg-7 order-1 order-lg-3">
         <div class="row">
-           <div class="sec_area">
-             <h2 class="section_title text-left d-block mb-5">
-                Simply put, dental health is
-                overall health
-              </h2>
-              <p>We measure the bacteria in your mouth that has been linked to:</p>
-              <div class="col-lg-12">
-                <ul class="ul_list">
-                  <li>Heart Disease</li>
-                  <li>Diabetes</li>
-                  <li>Alzheimer’s Disease</li>
-                  <li>Rheumatoid Arthritis</li>
-                  <li>Pregnancy Issues</li>
-                  <li>Female and Male Fertility</li>
-                  <li>Inflammatory Bowel Disease</li>
-                  <li>Cancer</li>
-                </ul>
-              </div>
-           </div>
+          <div class="sec_area">
+            <h2 class="section_title text-left d-block mb-5">
+              {% if section.settings.heading != blank %}
+                {{ section.settings.heading }}
+              {% endif %}
+            </h2>
+            {% if section.settings.list_text != blank %}
+              <p>{{ section.settings.list_text }}</p>
+            {% endif %}
+            <div class="col-lg-12">
+              <ul class="ul_list">
+                {% if section.blocks.size > 0 %}
+                  {% for block in section.blocks %}
+                    {% if block.settings.text != blank %}
+                      <li>{{ block.settings.text }}</li>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-{% stylesheet %}
-
-
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+{% schema %}
+{
+  "name": "Process",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "title_image",
+      "label": "Heading Image"
+    },
+    {
+      "type": "text",
+      "id": "list_text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block_text",
+      "name": "Block text",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Process"
+    }
+  ]
+}
+{% endschema %}
