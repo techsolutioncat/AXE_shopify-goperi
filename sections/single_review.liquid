@@ -1,36 +1,79 @@
-{% schema %}
-  {
-    "name": "Doctor Review",
-    "settings": []
+{% style %}
+   #shopify-section-{{ section.id }} .doc_review {
+    background-color: #7ccce7;
   }
-{% endschema %}
 
-<section class="doc_review p-0 m-0 row justify-content-center">
+   #shopify-section-{{ section.id }} .doc_review span.quote1 {
+    padding: 0px 0 50px 20px;
+    display: block;
+  }
+
+   #shopify-section-{{ section.id }} .doc_review span.quote2 img {
+    transform: rotate(180deg);
+  }
+
+   #shopify-section-{{ section.id }} .doc_review h4 {
+    font-size: 29px;
+    font-family: "RocGrotesk-Regular";
+    line-height: 35px;
+  }
+{% endstyle %}
+
+<section class= "doc_review p-0 m-0 row justify-content-center">
   <div class="col-sm-12 col-md-4 col-lg-4 p-0">
-    <img src="{{ 'doctor.png' | asset_url }}" class="img-fluid" />
+    {% if section.settings.image != blank %}
+      <img src="{{ section.settings.image | image_url: width: 800 }}" class="img-fluid">
+    {% endif %}
   </div>
   <div class="col-sm-12 col-md-8 col-lg-8">
     <div class="row h-100 align-items-center">
       <div class="col-lg-3">
         <span class="quote1">
-          <img src="{{ 'quote.png' | asset_url }}" class="img-fluid" />
+          <img src="{{ 'left.png' | asset_url }}" class="img-fluid">
         </span>
       </div>
       <div class="col-lg-6 text-center ">
-          <h4 class="mb-5 d-block">Oral Health is the gateway to overall health, and it all starts in your mouth.</h4>
-          <h4 class="mt-5 d-block">- Dr. Alexandra Kantor</h4>
+        {% if section.settings.text != blank %}
+          <h4 class="mb-5 d-block">{{ section.settings.text }}</h4>
+        {% endif %}
+        {% if section.settings.name != blank %}
+          <h4 class="mb-5 d-block">{{ section.settings.name }}</h4>
+        {% endif %}
       </div>
       <div class="col-lg-3">
         <span class="quote2">
-          <img src="{{ 'quote.png' | asset_url }}" class="img-fluid" />
+          <img src="{{ 'right.png' | asset_url }}" class="img-fluid">
         </span>
       </div>
     </div>
   </div>
 </section>
 
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+{% schema %}
+{
+  "name": "Single review",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Single review"
+    }
+  ]
+}
+{% endschema %}
