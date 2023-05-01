@@ -120,7 +120,7 @@ label.ads1 span.pri_ce span.apne0 {
     {
     background-color: #e5f98e;
     text-decoration: none;
-    padding: 6px 30px;
+    padding: 10px 32px;
 }
 
 .custom_header nav.header__inline-menu li a:hover span,
@@ -259,7 +259,7 @@ section.recommed .box p {
 
 .footer_main {
     background-color: #004796;
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
 .footer_main img.footer_logo {
@@ -276,10 +276,9 @@ section.recommed .box p {
 .footer_main a.product-form-button {
     background: #e5f98e;
     color: #000;
-    font-weight: 500;
-    font-family: RocGrotesk-Medium;
+    font-family: 'RocGrotesk-Bold';
     text-decoration: none;
-    padding: 7px 17px 3px 17px;
+    padding: 8px 32px;
     margin: 0 0 15px 0;
     display: inline-block;
     border-radius: 40px;
@@ -292,9 +291,10 @@ ul.quicklinks {
 }
 
 .quicklinks li a {
+    font-family: 'RocGrotesk-Regular' !important;
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 ul.social_link {
@@ -305,8 +305,11 @@ ul.social_link li {
     float: left;
     margin: 0 10px 0 0;
 }
-
-
+.footer-logo-text h5 {
+    font-size: 22px;
+    font-family: 'RocGrotesk-Regular' !important;
+    margin-bottom: 0px;
+}
 /* Styles for screens smaller than 600px */
 @media (max-width: 767px) {
 

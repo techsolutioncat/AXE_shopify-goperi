@@ -16,6 +16,9 @@
 .custom_header nav.header__inline-menu li .header__menu-item {
     padding: 0px;
 }
+.custom_header nav.header__inline-menu li .header__menu-item:hover {
+    text-decoration: underline;
+}
 
 /* Main product custom style css */
 .thumbnail.global-media-settings img {
@@ -28,10 +31,6 @@
 
 .thumbnail[aria-current]:focus:not(:focus-visible) {
     box-shadow: none !important;
-}
-
-.product.product--thumbnail_slider {
-    margin-top: 50px;
 }
 
 .product.product--thumbnail_slider .product__media-wrapper {
@@ -64,4 +63,6 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Begin footer custom style css */
 

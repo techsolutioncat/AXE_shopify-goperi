@@ -1,33 +1,174 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding: 0px;
+  }
+  #shopify-section-{{ section.id }} .footer_main ul.social_link {
+    display: flex;
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} .footer_main ul.social_link li {
+    width: 45px;
+  }
+  #shopify-section-{{ section.id }} footer.footer_main .footer-bottom-text * {
+    font-size: 13px;
+    font-family: 'RocGrotesk-Regular' !important;
+    margin-top: 24px;
+  }
+  #shopify-section-{{ section.id }} footer.footer_main .footer-bottom {
+    align-items: center;
+  }
+  #shopify-section-{{ section.id }} footer.footer_main .footer-bottom-link a.text-label {
+    font-size: 13px;
+    text-decoration: none;
+  }
+{% endstyle %}
+
 <footer class="footer_main">
-    <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-sm-12 col-md-6 col-lg-3">
-            <img src="{{ 'footer-logo.png' | asset_url }}" class="img-fluid footer_logo" />
-            <h5>Healthy Mouth.</h5>
-            <h5>Healthy Me.</h5>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-3">
-            <a href="#" class="product-form-button">SHOP</a>
-            <ul class="quicklinks">
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Login</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-3">
-            <ul class="quicklinks">
-              <li><a href="#">About Us </a></li>
-              <li><a href="#">Science </a></li>
-              <li><a href="#">My Test </a></li>
-              <li><a href="#">Partnership</a></li>
-            </ul>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-3">
-            <ul class="social_link">
-              <li><a href="#"><img src="{{ 'link.png' | asset_url }}" class="img-fluid" /></a></li>
-              <li><a href="#"><img src="{{ 'twi.png' | asset_url }}" class="img-fluid" /></a></li>
-              <li><a href="#"><img src="{{ 'ff.png' | asset_url }}" class="img-fluid" /></a></li>
-            </ul>
-          </div>
+  <div class="container">
+    <div class="row justify-content-center footer-logo-text">
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <img src="{{ 'footer-logo.png' | asset_url }}" class="img-fluid footer_logo">
+        <h5>Healthy Mouth.</h5>
+        <h5>Healthy Me.</h5>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <a href="/shop" class="product-form-button">SHOP</a>
+        <ul class="quicklinks">
+          <li><a href="mailto:hello@goperi.com">Contact Us</a></li>
+          <li><a href="/signin">Login</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <ul class="quicklinks">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/science">Science</a></li>
+          <li><a href="/register">Register My Test</a></li>
+          <li><a href="/partnership">Healthcare Providers</a></li>
+          <li><a href="/affiliate">Brand Affiliates</a></li>
+          <li><a href="https://www.blog.goperi.com" target="_blank">Blog</a></li>
+          <li><a href="https://provider.goperi.com" target="_blank">Provider Portal</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-3">
+        <ul class="social_link">
+          <li>
+            <a href="https://www.linkedin.com/company/getperi/" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="44.884"
+                height="44.884"
+                viewBox="0 0 44.884 44.884"
+                class="text-[#6180bf] w-[32px] h-[32px] md:w-[45px] md:h-[45px]"
+              >
+                <path id="Path_1711" data-name="Path 1711" d="M22.442,0A22.442,22.442,0,1,0,44.884,22.442,22.443,22.443,0,0,0,22.442,0M15.429,35.065H9.818V16.831h5.61ZM12.624,15.429a2.805,2.805,0,1,1,2.805-2.805,2.8,2.8,0,0,1-2.805,2.805M35.065,35.065h-5.61V24.546a2.577,2.577,0,0,0-.962-1.7,3.308,3.308,0,0,0-2.337-.048l-2.312,1.112V35.065h-5.61V16.831h5.61v.861a8.742,8.742,0,0,1,7.392.258,7.972,7.972,0,0,1,3.829,6.6Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/GetPeri" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="44.884"
+                height="44.884"
+                viewBox="0 0 44.884 44.884"
+                class="text-[#6180bf] w-[32px] h-[32px] md:w-[45px] md:h-[45px]"
+              >
+                <path id="Path_1712" data-name="Path 1712" d="M65.678,0A22.442,22.442,0,1,0,88.12,22.442,22.442,22.442,0,0,0,65.678,0M78.292,17.533c.011.257.017.516.017.774,0,7.929-6.033,17.07-17.067,17.07a16.975,16.975,0,0,1-9.2-2.7A12.142,12.142,0,0,0,60.927,30.2a6,6,0,0,1-5.6-4.166,5.981,5.981,0,0,0,1.128.107,6.054,6.054,0,0,0,1.581-.209,6,6,0,0,1-4.812-5.883c0-.025,0-.05,0-.076a5.973,5.973,0,0,0,2.717.75,6.005,6.005,0,0,1-1.857-8.009,17.023,17.023,0,0,0,12.364,6.267,6.082,6.082,0,0,1-.154-1.368,6,6,0,0,1,10.377-4.1,12.041,12.041,0,0,0,3.81-1.456,6.015,6.015,0,0,1-2.637,3.319,12.027,12.027,0,0,0,3.445-.945,12.17,12.17,0,0,1-2.993,3.107" transform="translate(-43.236)" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/GetPeri/" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="44.884"
+                height="44.884"
+                viewBox="0 0 44.884 44.884"
+                class="text-[#6180bf] w-[32px] h-[32px] md:w-[45px] md:h-[45px]"
+              >
+                <path id="Path_1713" data-name="Path 1713" d="M108.407,0a22.442,22.442,0,1,0,22.442,22.442A22.443,22.443,0,0,0,108.407,0m8.58,14.255h-4.208a1.538,1.538,0,0,0-1.4,1.4v3.1h4.208v5.61h-4.208V38.545h-5.61V24.37h-4.208V18.76h4.208V14.255c0-2.805,2.805-5.61,6.5-5.61h4.717Z" transform="translate(-85.965)" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/getperi/" target="_blank">
+              <svg
+                height="100%"
+                version="1.1"
+                viewBox="0 0 512 512"
+                width="100%"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:serif="http://www.serif.com/"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                class="text-[#6180bf] w-[32px] h-[32px] md:w-[45px] md:h-[45px]"
+                style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;"
+              >
+                <path d="M256,0c141.29,0 256,114.71 256,256c0,141.29 -114.71,256 -256,256c-141.29,0 -256,-114.71 -256,-256c0,-141.29 114.71,-256 256,-256Zm0,96c-43.453,0 -48.902,0.184 -65.968,0.963c-17.03,0.777 -28.661,3.482 -38.839,7.437c-10.521,4.089 -19.444,9.56 -28.339,18.455c-8.895,8.895 -14.366,17.818 -18.455,28.339c-3.955,10.177 -6.659,21.808 -7.437,38.838c-0.778,17.066 -0.962,22.515 -0.962,65.968c0,43.453 0.184,48.902 0.962,65.968c0.778,17.03 3.482,28.661 7.437,38.838c4.089,10.521 9.56,19.444 18.455,28.34c8.895,8.895 17.818,14.366 28.339,18.455c10.178,3.954 21.809,6.659 38.839,7.436c17.066,0.779 22.515,0.963 65.968,0.963c43.453,0 48.902,-0.184 65.968,-0.963c17.03,-0.777 28.661,-3.482 38.838,-7.436c10.521,-4.089 19.444,-9.56 28.34,-18.455c8.895,-8.896 14.366,-17.819 18.455,-28.34c3.954,-10.177 6.659,-21.808 7.436,-38.838c0.779,-17.066 0.963,-22.515 0.963,-65.968c0,-43.453 -0.184,-48.902 -0.963,-65.968c-0.777,-17.03 -3.482,-28.661 -7.436,-38.838c-4.089,-10.521 -9.56,-19.444 -18.455,-28.339c-8.896,-8.895 -17.819,-14.366 -28.34,-18.455c-10.177,-3.955 -21.808,-6.66 -38.838,-7.437c-17.066,-0.779 -22.515,-0.963 -65.968,-0.963Zm0,28.829c42.722,0 47.782,0.163 64.654,0.933c15.6,0.712 24.071,3.318 29.709,5.509c7.469,2.902 12.799,6.37 18.397,11.969c5.6,5.598 9.067,10.929 11.969,18.397c2.191,5.638 4.798,14.109 5.509,29.709c0.77,16.872 0.933,21.932 0.933,64.654c0,42.722 -0.163,47.782 -0.933,64.654c-0.711,15.6 -3.318,24.071 -5.509,29.709c-2.902,7.469 -6.369,12.799 -11.969,18.397c-5.598,5.6 -10.928,9.067 -18.397,11.969c-5.638,2.191 -14.109,4.798 -29.709,5.509c-16.869,0.77 -21.929,0.933 -64.654,0.933c-42.725,0 -47.784,-0.163 -64.654,-0.933c-15.6,-0.711 -24.071,-3.318 -29.709,-5.509c-7.469,-2.902 -12.799,-6.369 -18.398,-11.969c-5.599,-5.598 -9.066,-10.928 -11.968,-18.397c-2.191,-5.638 -4.798,-14.109 -5.51,-29.709c-0.77,-16.872 -0.932,-21.932 -0.932,-64.654c0,-42.722 0.162,-47.782 0.932,-64.654c0.712,-15.6 3.319,-24.071 5.51,-29.709c2.902,-7.468 6.369,-12.799 11.968,-18.397c5.599,-5.599 10.929,-9.067 18.398,-11.969c5.638,-2.191 14.109,-4.797 29.709,-5.509c16.872,-0.77 21.932,-0.933 64.654,-0.933Zm0,49.009c-45.377,0 -82.162,36.785 -82.162,82.162c0,45.377 36.785,82.162 82.162,82.162c45.377,0 82.162,-36.785 82.162,-82.162c0,-45.377 -36.785,-82.162 -82.162,-82.162Zm0,135.495c-29.455,0 -53.333,-23.878 -53.333,-53.333c0,-29.455 23.878,-53.333 53.333,-53.333c29.455,0 53.333,23.878 53.333,53.333c0,29.455 -23.878,53.333 -53.333,53.333Zm104.609,-138.741c0,10.604 -8.597,19.199 -19.201,19.199c-10.603,0 -19.199,-8.595 -19.199,-19.199c0,-10.604 8.596,-19.2 19.199,-19.2c10.604,0 19.201,8.596 19.201,19.2Z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCr2lLN_O5wvJiFc0Onf0ZmA" target="_blank">
+              <svg
+                enable-background="new 0 0 32 32"
+                version="1.1"
+                viewBox="0 0 32 32"
+                xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                class="text-[#6180bf] w-[32px] h-[32px] md:w-[45px] md:h-[45px]"
+              >
+                <g id="OUTLINE_copy_2">
+                  <g>
+                    <g>
+                      <polygon points="13.83,19.259 19.262,16 13.83,12.741    " fill="currentColor"></polygon>
+                    </g>
+                    <g>
+                      <path fill="currentColor" d="M16,0C7.164,0,0,7.163,0,16s7.164,16,16,16s16-7.164,16-16S24.836,0,16,0z M24.688,16.701c0,1.5-0.174,3-0.174,3     s-0.17,1.278-0.69,1.839c-0.661,0.738-1.401,0.742-1.741,0.786C19.651,22.512,16,22.518,16,22.518s-4.518-0.044-5.908-0.186     c-0.387-0.077-1.254-0.055-1.916-0.792c-0.521-0.562-0.69-1.839-0.69-1.839s-0.174-1.499-0.174-3v-1.406     c0-1.5,0.174-2.999,0.174-2.999s0.17-1.278,0.69-1.841C8.837,9.716,9.577,9.712,9.917,9.67c2.431-0.188,6.079-0.188,6.079-0.188     h0.008c0,0,3.648,0,6.079,0.188c0.339,0.042,1.08,0.046,1.741,0.784c0.521,0.563,0.69,1.841,0.69,1.841s0.174,1.5,0.174,3V16.701     z"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+    <div class="row footer-bottom justify-content-center">
+      <div class="col-md-8">
+        <div class="footer-bottom-text text-white font-roc text-label max-w-[780px] order-2 md:order-1">
+          {% if section.settings.footer_text != blank %}
+            {{ section.settings.footer_text }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-1"><span>&nbsp</span></div>
+      <div class="col-md-3 footer-bottom-link">
+        <p class="d-flex gap-4 order-1 md:order-2">
+          <a href="/terms" class="text-label text-white font-roc">Terms &amp; Conditions</a>
+          <a href="/privacy" class="text-label text-white font-roc">Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "footer_text",
+      "label": "Footer text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
+    }
+  ]
+}
+{% endschema %}
