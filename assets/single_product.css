@@ -553,10 +553,10 @@ ul.social_link li {
     }
 
     summary.header__icon.header__icon--menu.header__icon--summary.link.focus-inset {
-        position: relative;
+        /* position: relative;
         left: 340px !important;
         float: right;
-        display: flow-root;
+        display: flow-root; */
     }
 
     fieldset.js.product-form__input label {
@@ -569,7 +569,7 @@ ul.social_link li {
 @media (max-width: 992px) {
     summary.header__icon.header__icon--menu.header__icon--summary.link.focus-inset {
         position: relative;
-        left: 730px;
+        /* left: 730px; */
         float: right;
         display: flow-root;
     }
@@ -590,7 +590,7 @@ ul.social_link li {
 
     a.header__heading-link.link.link--text.focus-inset {
         position: relative;
-        left: -50px;
+        /* left: -50px; */
         top: 5px;
         transform: translate(0);
     }
