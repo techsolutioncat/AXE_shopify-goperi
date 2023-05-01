@@ -305,11 +305,13 @@ ul.social_link li {
     float: left;
     margin: 0 10px 0 0;
 }
+
 .footer-logo-text h5 {
     font-size: 22px;
     font-family: 'RocGrotesk-Regular' !important;
     margin-bottom: 0px;
 }
+
 /* Styles for screens smaller than 600px */
 @media (max-width: 767px) {
 
