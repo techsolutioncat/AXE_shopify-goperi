@@ -1,0 +1,67 @@
+
+/* Begin menu custom style css */
+@media screen and (min-width: 990px) {
+    .header {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+.custom_header nav.header__inline-menu li a span,
+.custom_header nav.header__inline-menu li span {
+    font-family: 'RocGrotesk-Regular' !important;
+    font-size: 17px;
+}
+
+.custom_header nav.header__inline-menu li .header__menu-item {
+    padding: 0px;
+}
+
+/* Main product custom style css */
+.thumbnail.global-media-settings img {
+    display: none;
+}
+
+.thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+    margin-right: 14px;
+}
+
+.thumbnail[aria-current]:focus:not(:focus-visible) {
+    box-shadow: none !important;
+}
+
+.product.product--thumbnail_slider {
+    margin-top: 50px;
+}
+
+.product.product--thumbnail_slider .product__media-wrapper {
+    margin-top: 120px;
+}
+
+.yotpo-sr-bottom-line-text {
+    font-size: 15px !important;
+    font-family: 'RocGrotesk-Regular' !important;
+    font-weight: normal !important;
+    margin-top: 5px;
+}
+.yotpo-sr-bottom-line-summary {
+    margin-top: -20px;
+}
+.yotpo-sr-bottom-line-summary svg {
+    width: 21px;
+    height: 21px;
+}
+.yotpo-sr-bottom-line-summary path {
+    stroke: #FDC965;
+    width: 21px !important;
+}
+.product-form__buttons span.hd {
+    font-family: 'RocGrotesk-Bold' !important;
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

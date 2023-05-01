@@ -1,86 +1,122 @@
-{% schema %}
-  {
-    "name": "What you'll discover",
-    "settings": []
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-bottom: 0px;
   }
-{% endschema %}
+  #shopify-section-{{ section.id }} .section-content {
+    background: #7CCCE7;
+  }
+  #shopify-section-{{ section.id }} .section-content .title-box {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  #shopify-section-{{ section.id }} .section-content h1.heading {
+    font-size: 64px;
+    font-family: 'RocGrotesk-Bold';
+  }
+  #shopify-section-{{ section.id }} .section-content .title-box img {
+    margin-left: 327px;
+    margin-top: -51px;
+  }
+  #shopify-section-{{ section.id }} .section-content .text-box .block-title * {
+    font-size: 35px;
+    font-family: 'RocGrotesk-Regular';
+  }
+  #shopify-section-{{ section.id }} .section-content .text-box .block-text * {
+    font-size: 18px;
+    font-family: 'Acumin Pro';
+  }
+  #shopify-section-{{ section.id }} .section-content .text-box {
+    width: 75%;
+  }
+  #shopify-section-{{ section.id }} .section-content .image-box {
+    width: 25%;
+  }
+  #shopify-section-{{ section.id }} .main-content {
+    display: flex; 
+  }
+  #shopify-section-{{ section.id }} .block-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  #shopify-section-{{ section.id }} .section-content .item {
+    width: calc(50% - 20px);
+  }
+{% endstyle %}
 
-<section class="recommed p-0">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-sm-12 col-md-1 col-lg-1">&nbsp;</div>
-      <div class="col-sm-12 col-md-7 col-lg-7">
-        <div class="row">
-          <h2 class="section_title text-left d-block mb-5">
-            What you’ll discover
-          </h2>
-          <div class="col-md-6 col-lg-6">
-            <div class="box">
-              <h4>Oral Health Scores </h4>
-              <p>
-                Check your Gum Disease Score, Tooth
-                Decay Score, and Beneficial Bacteria
-                Score to understand the current state of
-                your oral health.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6">
-            <div class="box">
-              <h4>Diet & Nutrition Recommendations</h4>
-              <p>
-                From food choices to eating habits to tips
-                and tricks for a healthy lifestyle, we have
-                you covered
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6">
-            <div class="box">
-              <h4>Mouth-Body Connection</h4>
-              <p>
-                Find out what systemic diseases are
-                linked to your bacterial profile.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6">
-            <div class="box">
-              <h4>Plan of Action</h4>
-              <p>
-                Get your personalized hygiene routine and
-                recommended products straight from
-                the expert.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6">
-            <div class="box">
-              <h4>Treatment Recommendations</h4>
-              <p>
-                Let us give you some pointers on what a
-                dentist might recommend.
-              </p>
-            </div>
-          </div>
-          
-        </div>
+<div class="section-content">
+  <div class="page-width main-content">
+    <div class="text-box">
+      <div class="title-box">
+        {% if section.settings.heading != blank %}
+          <h1 class="heading">{{ section.settings.heading }}</h1>
+          {% if section.settings.title_image != blank %}
+            <img src="{{ section.settings.title_image | image_url: width: 1000 }}">
+          {% endif %}
+        {% endif %}
       </div>
-      <div class="col-sm-12 col-md-4 col-lg-4 p-0 m-0">
-        <img src="{{ 'sdsad.png' | asset_url }}" class="img-fluid" />
+      <div class="block-content">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            <div class="item">
+              <h4 class="block-title">{{ block.settings.heading }}</h4>
+              <div class="block-text">{{ block.settings.text }}</div>
+            </div>
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
+    <div class="image-box">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url: width: 1000 }}">
+      {% endif %}
+    </div>
   </div>
-</section>
+</div>
 
-{% stylesheet %}
-
-
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+{% schema %}
+{
+  "name": "Product recommendations",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "title_image",
+      "label": "Heading Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block_text",
+      "name": "Block text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product recommendations"
+    }
+  ]
+}
+{% endschema %}

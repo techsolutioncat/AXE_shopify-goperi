@@ -2,6 +2,7 @@
   "sections": {
     "main": {
       "type": "main-product",
+      "disabled": true,
       "blocks": {
         "title": {
           "type": "title",
@@ -82,26 +83,32 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {}
     },
     "process": {
       "type": "process",
+      "disabled": true,
       "settings": {}
     },
     "custom_review": {
       "type": "custom_review",
+      "disabled": true,
       "settings": {}
     },
     "oral_plan": {
       "type": "oral_plan",
+      "disabled": true,
       "settings": {}
     },
     "single_review": {
       "type": "single_review",
+      "disabled": true,
       "settings": {}
     },
     "168269408902ee41ed": {
       "type": "apps",
+      "disabled": true,
       "blocks": {
         "fe2595d6-768a-4286-bc45-d46d02aef5a9": {
           "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",

@@ -30,9 +30,9 @@
 <noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
 
-    <link rel="stylesheet" href="{{ 'single_product.css' | asset_url }}" />
+{% comment %} <link rel="stylesheet" href="{{ 'single_product.css' | asset_url }}" /> {% endcomment %}
 {% comment %}     <link rel="stylesheet" href="{{ 'theme_fonts.css' | asset_url }}" /> {% endcomment %}
-{{ 'theme_fonts.scss.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'theme_fonts.scss.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <style>
   header-drawer {
