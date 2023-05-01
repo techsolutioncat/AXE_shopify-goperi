@@ -4,6 +4,7 @@
   }
   #shopify-section-{{ section.id }} .section-content {
     background: #7CCCE7;
+    position: relative;
   }
   #shopify-section-{{ section.id }} .section-content .title-box {
     padding-top: 50px;
@@ -42,14 +43,109 @@
   #shopify-section-{{ section.id }} .section-content .item {
     width: calc(50% - 20px);
   }
-
-  /* Responsive */
-  @media(max-width: 1900px) {
-    
+  #shopify-section-{{ section.id }} .image-box img {
+    width: 700px;
+    margin-left: -119px;
+    margin-top: 125px;
   }
+  #shopify-section-{{ section.id }} .section-top-image {
+    width: 140px;
+    right: 350px;
+    position: absolute;
+    top: -116px;
+  }
+  /* Responsive */
+  @media(max-width: 1800px) {
+    #shopify-section-{{ section.id }} .image-box img {
+      margin-left: -206px;
+    }
+  }
+  @media(max-width: 1600px) {
+    #shopify-section-{{ section.id }} .image-box img {
+      margin-left: -150px;
+      margin-top: 185px;
+      width: 560px;
+    }
+  }
+  @media(max-width: 1440px) {
+    #shopify-section-{{ section.id }} .text-box {
+      position: relative;
+      z-index: 1;
+    }
+    #shopify-section-{{ section.id }} .image-box img {
+      margin-left: -150px;
+      margin-top: 445px;
+      width: 420px;
+      position: relative;
+      z-index: 0;
+    }
+    #shopify-section-{{ section.id }} .section-top-image {
+      width: 100px;
+      right: 305px;
+      position: absolute;
+      top: -70px;
+    }
+  }
+  @media(max-width: 1000px) {
+    #shopify-section-{{ section.id }} .main-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    #shopify-section-{{ section.id }} .image-box img {
+      margin-top: 0px;
+      margin-left: 0px;
+    }
+    #shopify-section-{{ section.id }} .section-content .text-box,
+    #shopify-section-{{ section.id }} .section-content .image-box {
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} .section-content .image-box {
+      display: flex;
+      justify-content: center;
+    }
+    #shopify-section-{{ section.id }} .section-top-image {
+      width: 80px;
+      right: 80px;
+    }
+  }
+  @media(max-width: 768px) {
+    #shopify-section-{{ section.id }} .section-content .text-box .block-title * {
+      font-size: 16px;
+    }
+    #shopify-section-{{ section.id }} .section-content .text-box .block-text * {
+      font-size: 11px;
+    }
+    #shopify-section-{{ section.id }} .section-content h1.heading {
+      font-size: 27px;
+    }
+    #shopify-section-{{ section.id }} .section-content .title-box img {
+      margin-left: 149px;
+      width: 128px;
+    }
+    #shopify-section-{{ section.id }} .section-content .title-box {
+      padding-bottom: 0px;
+    }
+  }
+  @media(max-width: 500px) {
+    #shopify-section-{{ section.id }} .image-box img {
+      width: 360px;
+    }
+    #shopify-section-{{ section.id }} .section-content h1.heading {
+      text-align: center;
+    }
+    #shopify-section-{{ section.id }} .section-content .title-box img {
+      margin-left: 187px;
+    }
+    #shopify-section-{{ section.id }} .section-top-image {
+      width: 60px;
+      right: 10px;
+    }
+  }
+
 {% endstyle %}
 
 <div class="section-content">
+  <img src="{{ 'white_circle.png' | asset_url }}" class="section-top-image">
   <div class="page-width main-content">
     <div class="text-box">
       <div class="title-box">
