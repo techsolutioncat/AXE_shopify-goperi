@@ -53,7 +53,18 @@
   data-desktop-layout="{{ section.settings.gallery_layout }}"
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
-  <slider-component id="GalleryViewer-{{ section.id }}{{ id_append }}" class="slider-mobile-gutter">
+  <slider-component id="GalleryViewer-{{ section.id }}{{ id_append }}" class="slider-mobile-gutter image-slide-wrap">
+    <a href="Javascript:;" class="prev-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="37.542"
+        height="28.211"
+        viewBox="0 0 37.542 28.211"
+        class="text-[#BCC5C2] min-w-[37px] cursor-pointer"
+      >
+        <g id="Group_157" data-name="Group 157" transform="translate(3.19 1.571)"><path id="Path_325" data-name="Path 325" d="M63,0H28.648" transform="translate(-28.648 12.548)" fill="none" stroke="currentColor" stroke-width="4"></path><path id="Path_324" data-name="Path 324" d="M490.658,4966.594l-15.588,12.28,15.588,12.815" transform="translate(-475.07 -4966.594)" fill="none" stroke="currentColor" stroke-width="4"></path></g>
+      </svg>
+    </a>
     {%- unless is_duplicate -%}
       <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
         {{ 'accessibility.skip_to_product_info' | t }}
@@ -92,7 +103,7 @@
         {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"
-            class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}"
+            class="product-slider product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}"
             data-media-id="{{ section.id }}-{{ media.id }}"
           >
             {%- liquid
@@ -103,19 +114,19 @@
               endif
             -%}
             {% render 'product-thumbnail',
-                media: media,
-                media_count: media_count,
-                position: media_position,
-                desktop_layout: section.settings.gallery_layout,
-                mobile_layout: section.settings.mobile_thumbnails,
-                loop: section.settings.enable_video_looping,
-                modal_id: section.id,
-                xr_button: true,
-                media_width: media_width,
-                media_fit: section.settings.media_fit,
-                constrain_to_viewport: section.settings.constrain_to_viewport,
-                lazy_load: lazy_load
-              %}
+              media: media,
+              media_count: media_count,
+              position: media_position,
+              desktop_layout: section.settings.gallery_layout,
+              mobile_layout: section.settings.mobile_thumbnails,
+              loop: section.settings.enable_video_looping,
+              modal_id: section.id,
+              xr_button: true,
+              media_width: media_width,
+              media_fit: section.settings.media_fit,
+              constrain_to_viewport: section.settings.constrain_to_viewport,
+              lazy_load: lazy_load
+            %}
           </li>
         {%- endunless -%}
       {%- endfor -%}
@@ -146,7 +157,19 @@
         </button>
       </div>
     {%- endunless -%}
+    <a href="Javascript:;" class="next-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="37.542"
+        height="28.211"
+        viewBox="0 0 37.542 28.211"
+        class="text-[#BCC5C2] min-w-[37px] cursor-pointer"
+      >
+        <g id="Group_154" data-name="Group 154" transform="translate(-447.474 -4964.894)"><path id="Path_325" data-name="Path 325" d="M28.648,0H63" transform="translate(418.826 4979.013)" fill="none" stroke="currentColor" stroke-width="4"></path><path id="Path_324" data-name="Path 324" d="M475.07,4966.594l15.588,12.28-15.588,12.815" transform="translate(-8.832 -0.129)" fill="none" stroke="currentColor" stroke-width="4"></path></g>
+      </svg>
+    </a>
   </slider-component>
+
   {%- if first_3d_model -%}
     <button
       class="button button--full-width product__xr-button"
@@ -219,12 +242,16 @@
               aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}"
               aria-describedby="{{ thumbnail_id }}"
             >
-              {{ featured_media.preview_image | image_url: width: 416 | image_tag:
-                loading: 'lazy',
-                sizes: sizes,
-                widths: '54, 74, 104, 162, 208, 324, 416',
-                id: thumbnail_id,
-                alt: featured_media.alt | escape
+              {{
+                featured_media.preview_image
+                | image_url: width: 416
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: sizes,
+                  widths: '54, 74, 104, 162, 208, 324, 416',
+                  id: thumbnail_id,
+                  alt: featured_media.alt
+                | escape
               }}
             </button>
           </li>
@@ -273,12 +300,16 @@
                 aria-controls="GalleryViewer-{{ section.id }}{{ id_append }}"
                 aria-describedby="{{ thumbnail_id }}"
               >
-                {{ media.preview_image | image_url: width: 416 | image_tag:
-                  loading: 'lazy',
-                  sizes: sizes,
-                  widths: '54, 74, 104, 162, 208, 324, 416',
-                  id: thumbnail_id,
-                  alt: media.alt | escape
+                {{
+                  media.preview_image
+                  | image_url: width: 416
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: sizes,
+                    widths: '54, 74, 104, 162, 208, 324, 416',
+                    id: thumbnail_id,
+                    alt: media.alt
+                  | escape
                 }}
               </button>
             </li>
@@ -298,3 +329,105 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+<script src="{{ 'jquery-3.6.0.min.js' | asset_url }}"></script>
+
+<script>
+  // define variables
+  var slideIndex = 1;
+  var slides = document.getElementsByClassName('product-slider');
+  var prevBtn = document.getElementsByClassName('prev-btn')[0];
+  var nextBtn = document.getElementsByClassName('next-btn')[0];
+
+  // add event listeners to buttons
+  prevBtn.addEventListener('click', function () {
+    slideIndex--;
+    slideShow();
+  });
+  nextBtn.addEventListener('click', function () {
+    slideIndex++;
+    slideShow();
+  });
+  $('slider-component.thumbnail-slider ul li.thumbnail-list__item.slider__slide').on('click', function() {
+    slideIndex = parseInt($(this).attr('data-media-position'));
+    slideShow();
+  });
+  // function to show slide at current index
+  function slideShow() {
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    if (slideIndex < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+    slides[slideIndex - 1].style.display = 'block';
+
+    {% comment %}  {% endcomment %}
+    $('slider-component.thumbnail-slider ul li.thumbnail-list__item.slider__slide').each(function(){
+      $(this).find('button').attr('aria-current', false);
+    });
+    $('slider-component.thumbnail-slider ul li.thumbnail-list__item.slider__slide:nth-child('+ slideIndex +') button').attr('aria-current', true);
+  }
+</script>
+
+{% style %}
+  slider-component.image-slide-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  slider-component.image-slide-wrap ul.product__media-list {
+    width: 530px;
+  }
+  slider-component.image-slide-wrap ul.product__media-list li .product-media-container {
+    border: none;
+  }
+  slider-component.image-slide-wrap .prev-btn,
+  slider-component.image-slide-wrap .next-btn {
+    color: #bcc5c2;
+  }
+
+  @media(max-width: 749px) {
+    .product.product--thumbnail_slider .product__media-wrapper {
+      margin-top: 0px;
+    }
+    .product.product--thumbnail_slider  {
+      padding: 0px 50px;
+    }
+  }
+  @media(max-width: 500px) {
+    slider-component.image-slide-wrap .prev-btn svg,
+    slider-component.image-slide-wrap .next-btn svg {
+      width: 16px;
+    }
+    .product.product--thumbnail_slider .product__title h1 {
+      font-size: 21px;
+    }
+    .product.product--thumbnail_slider p.product__text.inline-richtext.subtitle,
+    .product.product--thumbnail_slider .product__description.rte.quick-add-hidden
+     {
+      font-size: 12px;
+    }
+    .product.product--thumbnail_slider .product-form__buttons span.hd {
+      font-size: 14px;
+    }
+    product-form.product-form form button {
+      width: 140px;
+      height: 40px;
+    }
+    .product.product--thumbnail_slider .yotpo-sr-bottom-line-summary svg {
+      width: 12px;
+      height: 12px;
+    }
+    .product.product--thumbnail_slider .yotpo-sr-bottom-line-summary {
+      align-items: center !important;
+    }
+    .product.product--thumbnail_slider .yotpo-sr-bottom-line-text {
+      font-size: 12px !important;
+      margin-top: 2px;
+    }
+  }
+{% endstyle %}
