@@ -257,26 +257,6 @@ section.recommed .box p {
 
 /* section 6 */
 
-.doc_review {
-    background-color: #7CCCE7;
-}
-
-.doc_review span.quote1 {
-    padding: 0px 0 50px 20px;
-    display: block;
-}
-
-.doc_review span.quote2 img {
-    transform: rotate(180deg);
-}
-
-.doc_review h4 {
-    font-size: 29px;
-    font-family: RocGrotesk-Medium;
-    line-height: 35px;
-}
-
-
 .footer_main {
     background-color: #004796;
     padding: 40px 0;
