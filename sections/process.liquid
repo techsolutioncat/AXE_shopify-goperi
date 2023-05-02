@@ -104,12 +104,71 @@
   #shopify-section-{{ section.id }} img.main-left-image {
     width: 513px;
   }
+  @media (max-width: 1200px) {
+    #shopify-section-{{ section.id }} img.main-left-image {
+      width: 400px;
+      margin-left: 100px !important;
+    }
+  }
+  @media (max-width: 991px) {
+    #shopify-section-{{ section.id }} section.sec-2:after {
+      background-image: unset;
+    }
+    #shopify-section-{{ section.id }} section.sec-2:before {
+      bottom: 385px;
+      top: unset;
+    }
+    #shopify-section-{{ section.id }} .section-main-image {
+      display: flex;
+      justify-content: center;
+    }
+    #shopify-section-{{ section.id }} .container {
+      /* padding: 0px 0px 0px 85px; */
+      padding-left: 75px;
+    }
+  }
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} {
+      padding: 0px !important;
+    }
+  }
+  @media (max-width: 500px) {
+    #shopify-section-{{ section.id }} section.sec-2 .sec_area h2.section_title {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    #shopify-section-{{ section.id }} section.sec-2 .sec_area p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    #shopify-section-{{ section.id }} section.sec-2 .sec_area .ul_list li {
+      font-size: 14px;
+      margin: 6px 0;
+    }
+    #shopify-section-{{ section.id }} section.sec-2 .sec_area {
+      padding: 0px;
+    }
+    #shopify-section-{{ section.id }} img.main-left-image {
+      width: 264px;
+      margin-left: -35px !important;
+    }
+    #shopify-section-{{ section.id }} section.sec-2:before {
+      width: 118px;
+      background-position: 0px 0px;
+      left: -62px;
+      height: 200px;
+    }
+    #shopify-section-{{ section.id }} section.sec-2 .sec_area h2.section_title:before {
+      width: 46px;
+      left: -53px;
+    }
+  }
 {% endstyle %}
 
 <section class="sec-2">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 order-3 order-lg-1">
+      <div class="col-lg-4 order-3 order-lg-1 section-main-image">
         {% if section.settings.image != blank %}
           <img src="{{ section.settings.image | image_url: width: 1000 }}" class="main-left-image photo">
         {% endif %}
