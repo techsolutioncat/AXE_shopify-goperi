@@ -1,35 +1,49 @@
 @font-face {
   font-family: 'RocGrotesk-Regular';
-  src: url('roc-regular.woff') format('woff');
+  src: url('roc-regular.woff') format('woff'),
+      url('roc-regular.woff2') format('woff2'),
+      url('roc-regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'RocGrotesk-Medium';
-  src: url('roc-medium.woff') format('woff');
+  src: url('roc-medium.woff') format('woff'),
+      url('roc-medium.woff2') format('woff2'),
+      url('roc-medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'RocGrotesk-Bold';
-  src: url('roc-bold.woff') format('woff');
+  src: url('roc-bold.woff') format('woff'),
+      url('roc-bold.woff2') format('woff2'),
+      url('roc-bold.ttf') format('ttf');
 }
 
 
 @font-face {
   font-family: 'Acumin Pro';
-  src: url('Acumin-R.woff') format('woff');
+  src: url('Acumin-R.woff') format('woff'),
+      url('Acumin-R.woff2') format('woff2'),
+      url('Acumin-R.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Acumin Italic';
-  src: url('Acumin-It.woff') format('woff');
+  src: url('Acumin-It.woff') format('woff'),
+      url('Acumin-It.woff2') format('woff2'),
+      url('Acumin-It.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Acumin Bold';
-  src: url('Acumin-Bd.woff') format('woff');
+  src: url('Acumin-Bd.woff') format('woff'),
+      url('Acumin-Bd.woff2') format('woff2'),
+      url('Acumin-Bd.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Acumin Bold Italic';
-  src: url('Acumin-BdIt.woff') format('woff');
+  src: url('Acumin-BdIt.woff') format('woff'),
+      url('Acumin-BdIt.woff2') format('woff2'),
+      url('Acumin-BdIt.ttf') format('ttf');
 }
