@@ -20,6 +20,7 @@
   #shopify-section-{{ section.id }} .review-wrap .quote1,
   #shopify-section-{{ section.id }} .review-wrap .quote2 {
     margin-top: -142px;
+    max-width: 100px;
   }
   @media(max-width: 767px) {
     #shopify-section-{{ section.id }} .doc_review h4 {
@@ -31,13 +32,17 @@
     #shopify-section-{{ section.id }} .review-wrap {
       margin-top: 30px;
     }
+    #shopify-section-{{ section.id }} .review-wrap .quote1,
+    #shopify-section-{{ section.id }} .review-wrap .quote2 {
+      max-width: 50px;
+    }
   }
   @media(max-width: 375px) {
     #shopify-section-{{ section.id }} .review-wrap .quote1 {
-      margin-top: -275px;
+      margin-top: -286px;
     }
     #shopify-section-{{ section.id }} .review-wrap .quote2 {
-      margin-bottom: -290px;
+      margin-bottom: -306px;
     }
   }
 {% endstyle %}
