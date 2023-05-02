@@ -55,6 +55,86 @@
     width: 33px;
     height: 24px;
   }
+  @media (max-width: 1000px) {
+    #shopify-section-{{ section.id }} .review_section .carousel-inner .carousel-item .card-item {
+      flex-direction: column;
+    }
+    #shopify-section-{{ section.id }} .carousel-control-next-icon {
+      position: absolute;
+      top: 140px;
+      left: 10px;
+    }
+    #shopify-section-{{ section.id }} .carousel-control-prev-icon {
+      position: absolute;
+      top: 140px;
+      right: 10px;
+    }
+    #shopify-section-{{ section.id }} .review_section .carousel-inner {
+      padding: 50px 0px;
+    }
+    #shopify-section-{{ section.id }} .review_section .review-text-box {
+      width: 100%;
+      padding: 0px 50px;
+    }
+  }
+  @media (max-width: 767px) {
+    #shopify-section-{{ section.id }} .review_section div#review-carousel {
+      padding: 0px ;
+    }
+    #shopify-section-{{ section.id }} .review_section .image-box {
+      display: flex;
+      justify-content: center;
+      width: 223px;
+    }
+    #shopify-section-{{ section.id }} .carousel-control-next-icon {
+      position: absolute;
+      top: 28px;
+      left: 10px;
+    }
+    #shopify-section-{{ section.id }} .carousel-control-prev-icon {
+      position: absolute;
+      top: 28px;
+      right: 10px;
+    }
+  }
+  @media (max-width: 500px) {
+    #shopify-section-{{ section.id }} .carousel-control-next-icon {
+      position: absolute;
+      top: 20px;
+      left: -5px;
+      width: 23px;
+      height: 20px;
+    }
+    #shopify-section-{{ section.id }} .carousel-control-prev-icon {
+      position: absolute;
+      top: 20px;
+      right: -5px;
+      width: 23px;
+      height: 20px;
+    }
+    #shopify-section-{{ section.id }} .container,
+    #shopify-section-{{ section.id }} .page-width {
+        padding: 0px;
+      }
+      #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk h2.card-title {
+      font-size: 24px;
+      margin-bottom: 7px !important;
+    }
+
+    #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk p {
+      font-size: 13px;
+    }
+
+    #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk h5 {
+      font-size: 18px;
+    }
+    #shopify-section-{{ section.id }} .review_section .review-text-box {
+      padding: 0px 15px;
+    }
+    #shopify-section-{{ section.id }} .review_section .carousel-inner .revi_desk {
+      margin-top: 20px;
+    }
+  }
 {% endstyle %}
 
 <section class="review_section">
@@ -66,7 +146,7 @@
             {% for block in section.blocks %}
               <div class="carousel-item {% if forloop.index == 1 %}active{% endif %}">
                 <div class="row card-item">
-                  <div class="col-md-4 col-lg-4">
+                  <div class="col-md-4 col-lg-4 image-box">
                     {% if block.settings.image != blank %}
                       <img
                         src="{{ block.settings.image | image_url : width: 350  }}"
@@ -75,7 +155,7 @@
                       >
                     {% endif %}
                   </div>
-                  <div class="col-md-8 col-lg-8">
+                  <div class="col-md-8 col-lg-8 review-text-box">
                     <div class="revi_desk">
                       {% if block.settings.username != blank %}
                         <h2 class="card-title mb-4">{{ block.settings.username }}</h2>
