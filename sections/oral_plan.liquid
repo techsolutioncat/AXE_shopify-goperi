@@ -31,12 +31,73 @@
     font-family: "Acumin Pro";
     font-weight: 400;
   }
+
+  @media(max-width: 1800px) {
+    #shopify-section-{{ section.id }} .main-image {
+      margin-left: -110px;
+    }
+  }
+  @media(max-width: 1500px) {
+    #shopify-section-{{ section.id }} .main-image {
+      width: 465px;
+      margin-top: 140px;
+    }
+  }
+  @media(max-width: 1200px) {
+    #shopify-section-{{ section.id }} .main-image {
+      width: 425px;
+    }
+  }
+  @media(max-width: 999px) {
+    #shopify-section-{{ section.id }} .section-content {
+      flex-direction: column;
+      align-items: center;
+    }
+    #shopify-section-{{ section.id }} .section-content > div {
+      width: 100%;
+      padding: 0px 25px;
+    }
+    #shopify-section-{{ section.id }} .main-image {
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+    #shopify-section-{{ section.id }} section.oral_plan h2.section_title {
+      margin-top: 0px;
+    }
+    #shopify-section-{{ section.id }} section.oral_plan .image-wrap {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  @media(max-width: 500px) {
+    #shopify-section-{{ section.id }} section.oral_plan h2.section_title {
+      font-size: 30px;
+      line-height: 35px;
+      margin-top: 36px;
+    }
+
+    #shopify-section-{{ section.id }} section.oral_plan h4.block-title {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    #shopify-section-{{ section.id }} section.oral_plan p.block-text {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    #shopify-section-{{ section.id }} .main-image {
+      width: 315px;
+    }
+    #shopify-section-{{ section.id }} section.oral_plan .bb {
+      border-bottom: 1px solid #fff;
+    }
+  }
 {% endstyle %}
 
 <section class="oral_plan p-0">
   <div class="container">
     <div class="row section-content">
-      <div class="col-lg-7">
+      <div class="col-lg-7 col-md-12">
         <h2 class="section_title text-left d-block mb-5">
           {% if section.settings.heading != blank %}
             {{ section.settings.heading }}
@@ -64,9 +125,9 @@
         {% endif %}
       </div>
       <div class="col-lg-1">&nbsp;</div>
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-12 image-wrap">
         {% if section.settings.image != blank %}
-          <img src="{{ section.settings.image | image_url: width: 1000 }}" class="photo">
+          <img src="{{ section.settings.image | image_url: width: 1000 }}" class="main-image photo">
         {% endif %}
       </div>
     </div>
