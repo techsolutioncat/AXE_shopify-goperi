@@ -3,12 +3,7 @@
     background-color: #7ccce7;
   }
 
-   #shopify-section-{{ section.id }} .doc_review span.quote1 {
-    padding: 0px 0 50px 20px;
-    display: block;
-  }
-
-   #shopify-section-{{ section.id }} .doc_review span.quote2 img {
+  #shopify-section-{{ section.id }} .doc_review span.quote2 img {
     transform: rotate(180deg);
   }
 
@@ -17,22 +12,48 @@
     font-family: "RocGrotesk-Regular";
     line-height: 35px;
   }
+  #shopify-section-{{ section.id }} .review-wrap {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+  #shopify-section-{{ section.id }} .review-wrap .quote1,
+  #shopify-section-{{ section.id }} .review-wrap .quote2 {
+    margin-top: -142px;
+  }
+  @media(max-width: 767px) {
+    #shopify-section-{{ section.id }} .doc_review h4 {
+      font-size: 20px;
+    }
+    #shopify-section-{{ section.id }} .doc_review .img-fluid {
+      width: 100%;
+    }
+    #shopify-section-{{ section.id }} .review-wrap {
+      margin-top: 30px;
+    }
+  }
+  @media(max-width: 375px) {
+    #shopify-section-{{ section.id }} .review-wrap .quote1 {
+      margin-top: -275px;
+    }
+    #shopify-section-{{ section.id }} .review-wrap .quote2 {
+      margin-bottom: -290px;
+    }
+  }
 {% endstyle %}
 
-<section class= "doc_review p-0 m-0 row justify-content-center">
+<section class="doc_review p-0 m-0 row justify-content-center">
   <div class="col-sm-12 col-md-4 col-lg-4 p-0">
     {% if section.settings.image != blank %}
       <img src="{{ section.settings.image | image_url: width: 800 }}" class="img-fluid">
     {% endif %}
   </div>
   <div class="col-sm-12 col-md-8 col-lg-8">
-    <div class="row h-100 align-items-center">
-      <div class="col-lg-3">
-        <span class="quote1">
-          <img src="{{ 'left.png' | asset_url }}" class="img-fluid">
-        </span>
+    <div class="align-items-center review-wrap">
+      <div class="quote1">
+        <img src="{{ 'left.png' | asset_url }}" class="img-fluid">
       </div>
-      <div class="col-lg-6 text-center ">
+      <div class="text-center ">
         {% if section.settings.text != blank %}
           <h4 class="mb-5 d-block">{{ section.settings.text }}</h4>
         {% endif %}
@@ -40,10 +61,8 @@
           <h4 class="mb-5 d-block">{{ section.settings.name }}</h4>
         {% endif %}
       </div>
-      <div class="col-lg-3">
-        <span class="quote2">
-          <img src="{{ 'right.png' | asset_url }}" class="img-fluid">
-        </span>
+      <div class="quote2">
+        <img src="{{ 'right.png' | asset_url }}" class="img-fluid">
       </div>
     </div>
   </div>
