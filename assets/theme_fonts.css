@@ -21,29 +21,29 @@
 
 
 @font-face {
-  font-family: 'Acumin Pro';
-  src: url('Acumin-R.woff') format('woff'),
-      url('Acumin-R.woff2') format('woff2'),
-      url('Acumin-R.ttf') format('ttf');
+  font-family: 'Acumin-Pro';
+  src: url('Acumin-RPro.otf') format('opentype'),
+      url('Acumin-RPro.woff') format('woff'),
+      url('Acumin-RPro.ttf') format('ttf');
 }
 
 @font-face {
-  font-family: 'Acumin Italic';
-  src: url('Acumin-It.woff') format('woff'),
-      url('Acumin-It.woff2') format('woff2'),
-      url('Acumin-It.ttf') format('ttf');
+  font-family: 'Acumin-Italic';
+  src: url('Acumin-ItPro.woff') format('woff'),
+      url('Acumin-ItPro.otf') format('opentype'),
+      url('Acumin-ItPro.ttf') format('ttf');
 }
 
 @font-face {
-  font-family: 'Acumin Bold';
-  src: url('Acumin-Bd.woff') format('woff'),
-      url('Acumin-Bd.woff2') format('woff2'),
-      url('Acumin-Bd.ttf') format('ttf');
+  font-family: 'Acumin-Bold';
+  src: url('Acumin-BdPro.woff') format('woff'),
+      url('Acumin-BdPro.otf') format('opentype'),
+      url('Acumin-BdPro.ttf') format('ttf');
 }
 
 @font-face {
-  font-family: 'Acumin Bold Italic';
-  src: url('Acumin-BdIt.woff') format('woff'),
-      url('Acumin-BdIt.woff2') format('woff2'),
-      url('Acumin-BdIt.ttf') format('ttf');
+  font-family: 'Acumin-Bold-Italic';
+  src: url('Acumin-BdItPro.woff') format('woff'),
+      url('Acumin-BdItPro.otf') format('opentype'),
+      url('Acumin-BdItPro.ttf') format('ttf');
 }
