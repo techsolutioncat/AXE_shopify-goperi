@@ -37,7 +37,10 @@ p.product__text.inline-richtext.subtitle,
 .product__description.rte.quick-add-hidden {
     color: #000;
 }
-
+p.product__text.inline-richtext.subtitle
+{
+    font-weight: bolder;
+}
 p,
 .product__description.rte.quick-add-hidden {
     font-family: 'Acumin Pro' !important;
@@ -47,12 +50,13 @@ p,
 .product__title h1 {
     font-family: 'RocGrotesk-Regular' !important;
     font-size: 35px;
+    font-weight: bolder;
 }
 
-nav.header__inline-menu {
+/* nav.header__inline-menu {
     position: absolute;
     right: 20%;
-}
+} */
 
 label.ads0 span.pri_ce span.apne1,
 label.ads1 span.pri_ce span.apne0 {
@@ -67,9 +71,9 @@ label.ads1 span.pri_ce span.apne0 {
 .custom_header nav.header__inline-menu li summary.list-menu__item {
     font-family: 'RocGrotesk-Medium' !important;
     font-size: 17px;
-    margin: 0 10px;
+    /* margin: 0 10px; */
     border-radius: 40px;
-    padding: 10px 14px 7px 14px;
+    /* padding: 10px 14px 7px 14px; */
     color: #000;
 }
 
@@ -79,12 +83,11 @@ label.ads1 span.pri_ce span.apne0 {
 
 /* .custom_header nav.header__inline-menu li a:hover span, */
 .custom_header nav.header__inline-menu li a span.header__active-menu-item
-
 /* .custom_header nav.header__inline-menu li summary.list-menu__item:hover */
     {
     background-color: #e5f98e;
     text-decoration: none;
-    padding: 10px 32px;
+    padding: 10px 33px;
 }
 
 .custom_header nav.header__inline-menu li a:hover span,
@@ -223,11 +226,11 @@ section.recommed .box p {
 
 .footer_main {
     background-color: #004796;
-    padding: 60px 0;
+    padding: 50px 0;
 }
 
 .footer_main img.footer_logo {
-    margin: 0 0 20px 0;
+    margin: 0 0 32px 0;
 }
 
 .footer_main h5 {
@@ -259,6 +262,7 @@ ul.quicklinks {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+    letter-spacing: 0px;
 }
 
 ul.social_link {
@@ -267,7 +271,10 @@ ul.social_link {
 
 ul.social_link li {
     float: left;
-    margin: 0 10px 0 0;
+    margin: 0 8px 0 0;
+}
+ul.social_link li:last-child {
+    margin: 0px;
 }
 
 .footer-logo-text h5 {
@@ -485,7 +492,7 @@ ul.social_link li {
     }
 
     header.header.custom_header.header--mobile-left.page-width.header--has-menu {
-        padding: 0px 0 20px;
+        padding: 6px 16px;
     }
 
     a.header__heading-link.link.link--text.focus-inset {
@@ -493,6 +500,7 @@ ul.social_link li {
         left: 0;
         top: 5px;
         transform: translate(10px);
+        padding: 0px;
     }
 
     section#shopify-section-template--18826034282797__main {
