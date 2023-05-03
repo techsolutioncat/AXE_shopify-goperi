@@ -1,8 +1,25 @@
+/* Begin common style css */
+.flex {
+    display: flex;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.items-center {
+    align-items: center;
+}
 /* Begin menu custom style css */
 @media screen and (min-width: 990px) {
     .header {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
+        padding: 13px 0px !important;
+    }
+
+    header.header .header__heading-link {
+        margin-left: 0px;
+        padding: 0px;
+    }
+    header.header ul.list-menu {
+        gap: 48px;
     }
 }
 
@@ -14,6 +31,7 @@
 
 .custom_header nav.header__inline-menu li .header__menu-item {
     padding: 0px;
+    letter-spacing: 0px;
 }
 
 .custom_header nav.header__inline-menu li .header__menu-item:hover {
@@ -73,6 +91,7 @@
     header.header--mobile-left {
         display: flex;
     }
+
     header header-drawer {
         width: 100%;
         display: flex;
