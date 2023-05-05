@@ -60,7 +60,7 @@ p,
 
 label.ads0 span.pri_ce span.apne1,
 label.ads1 span.pri_ce span.apne0 {
-    display: none;
+    display: none !important;
 }
 
 .custom_header .header__icons {
@@ -97,7 +97,7 @@ label.ads1 span.pri_ce span.apne0 {
 
 /* single product page */
 
-fieldset.js.product-form__input legend {
+/* fieldset.js.product-form__input legend {
     display: none;
 }
 
@@ -108,9 +108,9 @@ fieldset.js.product-form__input label {
     padding: 20px 0 20px 70px !important;
     background: transparent !important;
     border: 2px solid #8fcae4 !important;
-    font-family: RocGrotesk-Regular !important;
-}
-
+    font-family: "RocGrotesk-Regular" !important;
+} */
+/* 
 .product-form__input input[type="radio"]:checked+label {
     color: #000 !important;
 }
@@ -123,7 +123,7 @@ fieldset.js.product-form__input label {
     appearance: revert;
     clip: unset !important;
     margin: 25px 0 0 20px;
-}
+} */
 
 fieldset.js.product-form__input label span.pri_ce {
     position: absolute;
@@ -131,11 +131,9 @@ fieldset.js.product-form__input label span.pri_ce {
     font-weight: 500;
 }
 
-
 product-form.product-form form button {
     width: auto;
     background: #e5f98e;
-    /* font-weight: 600; */
     text-transform: uppercase;
     border: none !important;
     border-radius: 45px;
@@ -226,11 +224,11 @@ section.recommed .box p {
 
 .footer_main {
     background-color: #004796;
-    padding: 50px 0;
+    padding: 39px 0;
 }
 
 .footer_main img.footer_logo {
-    margin: 0 0 32px 0;
+    margin: 0 0 28px 0;
 }
 
 .footer_main h5 {
@@ -246,7 +244,7 @@ section.recommed .box p {
     font-family: 'RocGrotesk-Bold';
     text-decoration: none;
     padding: 8px 32px;
-    margin: 0 0 15px 0;
+    margin: 0 0 12px 0;
     display: inline-block;
     border-radius: 40px;
 }
@@ -281,6 +279,7 @@ ul.social_link li:last-child {
     font-size: 22px;
     font-family: 'RocGrotesk-Regular' !important;
     margin-bottom: 0px;
+    letter-spacing: 0px;
 }
 
 /* Styles for screens smaller than 600px */
@@ -475,7 +474,7 @@ ul.social_link li:last-child {
     }
 
     footer.footer_main {
-        padding: 40px 10px 40px 20px;
+        padding: 48px 32px;
     }
 
     ul.social_link {
@@ -532,7 +531,7 @@ ul.social_link li:last-child {
         float: right;
         display: flow-root; */
     }
-
+    
     fieldset.js.product-form__input label {
         font-size: 13px !important;
         padding: 20px 0 20px 50px !important;

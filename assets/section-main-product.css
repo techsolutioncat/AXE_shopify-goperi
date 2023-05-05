@@ -471,6 +471,7 @@ a.product__text {
 
 .product-form__buttons {
   max-width: 44rem;
+  margin-top: 50px;
 }
 
 .product--no-media .product__info-container > modal-opener {

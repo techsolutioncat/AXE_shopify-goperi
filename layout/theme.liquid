@@ -1,7 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-
+    <script src=“https://www.googletagmanager.com/gtag/js?id=G-F661NEDM1Q”></script>
+    <meta name="facebook-domain-verification" content="q2v742zz3h2cibzch6wwk835lx0zh8" />
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(‘js’, new Date());
+  gtag(‘config’, ‘G-F661NEDM1Q’);
+  </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -298,8 +305,9 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    {% render 'th-subscription-scripts' %}
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    {% comment %} <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
@@ -314,6 +322,6 @@
       $('form#cart-notification-form button').trigger('click');
     });
   });
-</script>
+</script> {% endcomment %}
   </body>
 </html>
