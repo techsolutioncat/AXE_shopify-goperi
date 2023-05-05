@@ -7,24 +7,31 @@
     transform: rotate(180deg);
   }
 
-   #shopify-section-{{ section.id }} .doc_review h4 {
+   #shopify-section-{{ section.id }} .doc_review h4,
+   #shopify-section-{{ section.id }} .doc_review h4 * {
     font-size: 29px;
-    font-family: "RocGrotesk-Regular";
+    font-family: "RocGrotesk-Bold" !important;
     line-height: 35px;
   }
   #shopify-section-{{ section.id }} .review-wrap {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     height: 100%;
+    padding: 0px 20px;
   }
-  #shopify-section-{{ section.id }} .review-wrap .quote1,
+  #shopify-section-{{ section.id }} .review-wrap .quote1 {
+    margin-top: -208px;
+    max-width: 90px;
+  }
   #shopify-section-{{ section.id }} .review-wrap .quote2 {
-    margin-top: -142px;
-    max-width: 100px;
+    margin-top: -73px;
+    max-width: 90px;
   }
   @media(max-width: 767px) {
-    #shopify-section-{{ section.id }} .doc_review h4 {
+    #shopify-section-{{ section.id }} .doc_review h4,
+    #shopify-section-{{ section.id }} .doc_review h4 * {
       font-size: 20px;
+      line-height: 25px;
     }
     #shopify-section-{{ section.id }} .doc_review .img-fluid {
       width: 100%;
@@ -38,11 +45,19 @@
     }
   }
   @media(max-width: 375px) {
+    #shopify-section-{{ section.id }} .doc_review h4,
+    #shopify-section-{{ section.id }} .doc_review h4 * {
+      width: 260px;
+    }
     #shopify-section-{{ section.id }} .review-wrap .quote1 {
       margin-top: -286px;
     }
     #shopify-section-{{ section.id }} .review-wrap .quote2 {
-      margin-bottom: -306px;
+      margin-bottom: -270px;
+    }
+    #shopify-section-{{ section.id }} .review-wrap {
+      padding: 30px 20px;
+      margin-top: 20px;
     }
   }
 {% endstyle %}
@@ -79,7 +94,7 @@
   "tag": "section",
   "settings": [
     {
-      "type": "text",
+      "type": "richtext",
       "id": "text",
       "label": "Text"
     },

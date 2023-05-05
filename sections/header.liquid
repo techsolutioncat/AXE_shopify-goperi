@@ -40,7 +40,6 @@
     margin-left: -1.2rem;
   }
 
-
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
@@ -92,6 +91,35 @@
       padding-bottom: 0.5rem;
       padding-top: 0.5rem;
     }
+  }
+
+  {% comment %} dropdown menu style css {% endcomment %}
+  nav.header__inline-menu ul.header__submenu {
+    position: absolute;
+    right: 0;
+    border-radius: 13px;
+    box-shadow: 0 4px 22px #00000014;
+    border: none;
+    padding: 16px;
+    min-width: 240px;
+    margin-top: 13px;
+    color: #000;
+  }
+  nav.header__inline-menu ul.header__submenu li {
+    padding: 8px 0px;
+  }
+  nav.header__inline-menu ul.header__submenu .header__menu-item {
+    font-family: 'RocGrotesk-Regular' !important;
+    font-size: 17px;
+    line-height: inherit;
+    justify-content: center;
+  }
+  nav.header__inline-menu ul.header__submenu .header__menu-item:hover {
+    color: #f37047;
+    text-decoration: none;
+  }
+  summary.header__icon.header__icon--menu.header__icon--summary.link.focus-inset[aria-expanded=true] svg.icon-close {
+    display: none;
   }
 </style>
 

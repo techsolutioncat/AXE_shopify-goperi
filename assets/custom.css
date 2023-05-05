@@ -97,4 +97,7 @@
         display: flex;
         justify-content: end;
     }
+    .product-form__buttons {
+        margin-top: 0px;
+    }
 }
