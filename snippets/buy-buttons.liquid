@@ -5,26 +5,14 @@
   - block: {Object} passing the block information.
   - product_form_id: {String} product form id.
   - section_id: {String} id of section to which this snippet belongs.
-  - show_pickup_availability: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
+  - show_pickup_availability:: {Boolean} for the pickup availability. If true the pickup availability is rendered, false - not rendered (optional).
 
   Usage:
-  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
+  {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, show_pickup_availability: true %}
 {% endcomment %}
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
-    {%- liquid
-      assign gift_card_recipient_feature_active = false
-      if block.settings.show_gift_card_recipient and product.gift_card?
-        assign gift_card_recipient_feature_active = true
-      endif
-
-      assign show_dynamic_checkout = false
-      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
-        assign show_dynamic_checkout = true
-      endif
-    -%}
-
-    <product-form class="product-form" data-hide-errors="{{ gift_card_recipient_feature_active }}">
+    <product-form class="product-form">
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg
           aria-hidden="true"
@@ -47,7 +35,6 @@
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form'
       -%}
-        <input type="hidden" name="return_to" value="/checkout/">
         <input
           type="hidden"
           name="id"
@@ -55,15 +42,10 @@
           disabled
           class="product-variant-id"
         >
-
-        {%- if gift_card_recipient_feature_active -%}
-          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
-        {%- endif -%}
-
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
-            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or  product.selected_or_first_available_variant.inventory_policy == 'continue'
               assign check_against_inventory = false
             endif
             if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
@@ -71,23 +53,22 @@
             endif
           -%}
           <button
-            id="ProductSubmitButton-{{ section_id }}"
+            id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="add_tocart product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
           >
-            {% comment %} <span>
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+            <span class="btn-buy-now">
+              {% comment %} {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
-              {%- endif -%}
-            </span> {% endcomment %}
-
-            <span class="hd"> BUY NOW </span>
+              {%- endif -%} {% endcomment %}
+              BUY NOW
+            </span>
             <div class="loading-overlay__spinner hidden">
               <svg
                 aria-hidden="true"
@@ -100,14 +81,12 @@
               </svg>
             </div>
           </button>
-
-          {%- if show_dynamic_checkout -%}
+          {%- if block.settings.show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
         </div>
       {%- endform -%}
     </product-form>
-
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">
@@ -155,9 +134,3 @@
     <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
 </div>
-
-<script>
-  $('#shopify-section-{{ section.id }} .product-form__buttons button.product-form__submit').on('click', function() {
-    $('#shopify-section-{{ section.id }} form[data-type=add-to-cart-form]').submit();
-  });
-</script>
