@@ -75,7 +75,11 @@
                   {% endif %}
                   form="cart"
                 >
+                {%- if block.settings.txt__btn-checkout != blank -%}
+                  {{ block.settings.txt__btn-checkout }}
+                {%- else -%}
                   {{ 'sections.cart.checkout' | t }}
+                {%- endif -%}
                 </button>
               </div>
 
@@ -127,7 +131,15 @@
     {
       "type": "buttons",
       "name": "t:sections.main-cart-footer.blocks.buttons.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "txt__btn-checkout",
+          "default": "Check out",
+          "label": "Button text"
+        }
+      ]
     },
     {
       "type": "@app"
