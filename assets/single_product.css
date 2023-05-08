@@ -82,7 +82,8 @@ label.ads1 span.pri_ce span.apne0 {
 }
 
 /* .custom_header nav.header__inline-menu li a:hover span, */
-.custom_header nav.header__inline-menu li a span.header__active-menu-item
+.custom_header nav.header__inline-menu li a span.header__active-menu-item,
+.custom_header nav.header__inline-menu li:first-child a span
 /* .custom_header nav.header__inline-menu li summary.list-menu__item:hover */
     {
     background-color: #e5f98e;
