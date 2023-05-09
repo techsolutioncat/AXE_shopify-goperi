@@ -575,9 +575,12 @@
       function dateFormat() {
         setTimeout(() => {
           $('#yotpo-reviews-container .yotpo-date-format').each(function() {
-            var date = $(this).text();
-            const myArray = date.split("/");
-            $(this).text(myArray[1]+'/'+myArray[0]+'/'+myArray[2]);
+            if($(this).attr('date-format') != 'mm/dd/yy') {
+              var date = $(this).text();
+              const myArray = date.split("/");
+              $(this).text(myArray[1]+'/'+myArray[0]+'/'+myArray[2]);
+              $(this).attr('date-format', 'mm/dd/yy');
+            }
           });
         }, 1000);
       }
