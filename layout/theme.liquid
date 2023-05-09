@@ -250,6 +250,12 @@
     </script>
   </head>
 
+  <script>
+    var currentLocation = window.location;
+    if (currentLocation == 'https://shop.goperi.com' || currentLocation == 'https://shop.goperi.com/') {
+      location.href = 'https://shop.goperi.com/products/peri-oral-health-test-kit';
+    }
+  </script>
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}

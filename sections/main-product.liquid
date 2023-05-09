@@ -546,24 +546,31 @@
 
     window.addEventListener("load", (event) => {
       $('.yotpo[data-yotpo-element-id=2]').css('display', 'none');
-      $('.yotpo[data-yotpo-element-id=1] .star-clickable a').attr('style', 'color:#000 !important');
+      var styleAttr = 'font-family: Acumin-Pro!important; font-size: 18px; color:#000 !important; margin-top: 3px;';
 
-      dateFormat();
-      $('.yotpo-horizontal-pagination a').on('click', function() {
-          dateFormat();
+      $('.yotpo[data-yotpo-element-id=1] .star-clickable a').attr('style', styleAttr);
+      $('.yotpo[data-yotpo-element-id=1] .star-clickable a').on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($('#yotpo-app')).offset().top}, 100, 'linear');
       });
 
-      $('#yotpo-main-widget-btn').attr('style', 'background-color: #e5f98e !important; color: #000 !important');
+      dateFormat();
+      setInterval(dateFormat, 1000);
+      $('.yotpo-horizontal-pagination a').on('click', function() {
+       dateFormat();
+      });
 
-      $('a.yotpo-pagination-number.selected').attr('style', 'color: #000 !important;background-color: #e5f98e !important');
+      {% comment %} $('#yotpo-main-widget-btn').attr('style', 'background-color: #e5f98e !important; color: #000 !important'); {% endcomment %}
+
+      {% comment %} $('a.yotpo-pagination-number.selected').attr('style', 'color: #000 !important;background-color: #e5f98e !important'); {% endcomment %}
       
-      $('a.yotpo-pagination-number').hover(function(){
+      {% comment %} $('a.yotpo-pagination-number').hover(function(){
         $(this).attr('style', 'color: #000 !important;background-color: #e5f98e !important');
       },
       function(){
         $(this).attr('style', 'color: #000 !important;background-color: #fff !important');
         $('a.yotpo-pagination-number.selected').attr('style', 'color: #000 !important;background-color: #e5f98e !important');
-      });
+      }); {% endcomment %}
 
       function dateFormat() {
         setTimeout(() => {
