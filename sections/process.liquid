@@ -177,7 +177,7 @@
       <div class="col-lg-6 order-1 order-lg-3">
         <div class="row">
           <div class="sec_area">
-            <h2 class="section_title text-left d-block mb-5">
+            <h2 class="section_title {{ section.settings.text_align }} d-block mb-5">
               {% if section.settings.heading != blank %}
                 {{ section.settings.heading }}
               {% endif %}
@@ -212,6 +212,26 @@
       "type": "text",
       "id": "heading",
       "label": "Heading"
+    },
+    {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text align",
+        "options": [
+          {
+            "value": "text_left",
+            "label": "Text left"
+          },
+          {
+            "value": "text_center",
+            "label": "Text center"
+          },
+          {
+            "value": "text_right",
+            "label": "Text right"
+          }
+        ],
+        "default": "text_left"
     },
     {
       "type": "image_picker",

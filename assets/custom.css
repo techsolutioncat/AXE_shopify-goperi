@@ -8,6 +8,15 @@
 .items-center {
     align-items: center;
 }
+.text_left {
+    text-align: left;
+}
+.text_center {
+    text-align: center;
+}
+.text_right {
+    text-align: right;
+}
 /* Begin menu custom style css */
 @media screen and (min-width: 990px) {
     .header {

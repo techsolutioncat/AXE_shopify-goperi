@@ -4,8 +4,10 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "disabled": true,
-      "settings": {}
+      "settings": {
+        "footer_text": "<p>The information provided by peri is for educational and informational use only. The tests we offer are not intended <br\/>to diagnose, treat, or cure disease, or to replace the advice of your doctor or dentist.<\/p>",
+        "button_link": "shopify:\/\/products\/peri-oral-health-test-kit"
+      }
     }
   },
   "order": [

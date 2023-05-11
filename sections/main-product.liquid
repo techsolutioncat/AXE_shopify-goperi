@@ -543,11 +543,11 @@
         hiddenInput.value = event.currentTarget.value;
       });
     });
-
+    
     window.addEventListener("load", (event) => {
       $('.yotpo[data-yotpo-element-id=2]').css('display', 'none');
       var styleAttr = 'font-family: Acumin-Pro!important; font-size: 18px; color:#000 !important; margin-top: 3px;';
-
+      
       $('.yotpo[data-yotpo-element-id=1] .star-clickable a').attr('style', styleAttr);
       $('.yotpo[data-yotpo-element-id=1] .star-clickable a').on('click', function(e) {
         e.preventDefault();
@@ -555,6 +555,11 @@
       });
 
       dateFormat();
+      resizeReview();
+
+      window.addEventListener('resize', function(event) {
+        resizeReview();
+      }, true);
       setInterval(dateFormat, 1000);
       $('.yotpo-horizontal-pagination a').on('click', function() {
        dateFormat();
@@ -583,6 +588,17 @@
             }
           });
         }, 1000);
+      }
+
+      function resizeReview() {
+        var w = $(window).width();
+        {% comment %} if (w <= 768) {
+          $('.yotpo-display-l .yotpo-main-layout .yotpo-layout-header-wrapper .yotpo-bottom-line').attr('style', 'flex-direction: column !important;');
+          $('.yotpo-display-l .yotpo-main-layout .yotpo-layout-header-wrapper').attr('style', 'flex-direction: column !important;');
+        }else {
+          $('.yotpo-display-l .yotpo-main-layout .yotpo-layout-header-wrapper .yotpo-bottom-line').attr('style', '');
+          $('.yotpo-display-l .yotpo-main-layout .yotpo-layout-header-wrapper').attr('style', '');
+        } {% endcomment %}
       }
     });
   </script>
@@ -1973,6 +1989,21 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_video",
+      "default": false,
+      "label": "Display video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "t:sections.video.settings.video_url.label",
+      "placeholder": "t:sections.video.settings.video_url.placeholder",
+      "info": "t:sections.video.settings.video_url.info"
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",
