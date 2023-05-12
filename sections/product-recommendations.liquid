@@ -1,3 +1,6 @@
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
 {% style %}
   #shopify-section-{{ section.id }} {
     padding-bottom: 0px !important;
@@ -5,9 +8,12 @@
   #shopify-section-{{ section.id }} .section-content {
     background: #7CCCE7;
     position: relative;
+    {%- if section.settings.video_url != blank -%}
+      padding-top: 225px;
+    {%- endif -%}
   }
   #shopify-section-{{ section.id }} .section-content .title-box {
-    padding-top: 50px;
+    padding-top: 180px;
     padding-bottom: 50px;
   }
   #shopify-section-{{ section.id }} .section-content h1.heading {
@@ -28,31 +34,49 @@
   }
   #shopify-section-{{ section.id }} .section-content .text-box {
     width: 75%;
+    padding-bottom: 80px;
   }
   #shopify-section-{{ section.id }} .section-content .image-box {
     width: 25%;
   }
   #shopify-section-{{ section.id }} .main-content {
-    display: flex; 
+    display: flex;
   }
   #shopify-section-{{ section.id }} .block-content {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
   }
+
   #shopify-section-{{ section.id }} .section-content .item {
     width: calc(50% - 20px);
   }
   #shopify-section-{{ section.id }} .image-box img {
     width: 700px;
     margin-left: -119px;
-    margin-top: 125px;
+    margin-top: 236px;
   }
   #shopify-section-{{ section.id }} .section-top-image {
     width: 140px;
-    right: 350px;
+    right: 280px;
     position: absolute;
     top: -116px;
+  }
+  /* Video custom style css */
+  #shopify-section-{{ section.id }} .video_link{
+    display: flex;
+    justify-content: center;
+    margin-bottom: -335px;
+    position: relative;
+    z-index: 2;
+  }
+  #shopify-section-{{ section.id }} .video_link .video-section {
+    width: 760px;
+    height: 450px;
+  }
+  #shopify-section-{{ section.id }} .video-section__media.deferred-media {
+    padding-bottom: 0% !important;
+    height: 100% !important;
   }
   /* Responsive */
   @media(max-width: 1800px) {
@@ -63,7 +87,7 @@
   @media(max-width: 1600px) {
     #shopify-section-{{ section.id }} .image-box img {
       margin-left: -150px;
-      margin-top: 185px;
+      margin-top: 394px;
       width: 560px;
     }
   }
@@ -74,14 +98,14 @@
     }
     #shopify-section-{{ section.id }} .image-box img {
       margin-left: -150px;
-      margin-top: 445px;
+      margin-top: 552px;
       width: 420px;
       position: relative;
       z-index: 0;
     }
     #shopify-section-{{ section.id }} .section-top-image {
       width: 100px;
-      right: 305px;
+      right: 135px;
       position: absolute;
       top: -70px;
     }
@@ -107,6 +131,21 @@
       width: 80px;
       right: 80px;
     }
+    #shopify-section-{{ section.id }} .section-content .text-box{
+      padding-bottom: 0px;
+    }
+
+    /* video custom style css */
+    #shopify-section-{{ section.id }} .section-content {
+      padding-top: 160px;
+    }
+    #shopify-section-{{ section.id }} .video_link{
+      margin-bottom: -246px;
+    }
+    #shopify-section-{{ section.id }} .video_link .video-section {
+      width: 520px;
+      height: 320px;
+    }
   }
   @media(max-width: 768px) {
     #shopify-section-{{ section.id }} .section-content .text-box .block-title * {
@@ -125,8 +164,23 @@
     #shopify-section-{{ section.id }} .section-content .title-box {
       padding-bottom: 0px;
     }
+
+    /* video custom style css */
+    #shopify-section-{{ section.id }} .section-content {
+      padding-top: 140px;
+    }
+    #shopify-section-{{ section.id }} .video_link{
+      margin-bottom: -226px;
+    }
+    #shopify-section-{{ section.id }} .video_link .video-section {
+      width: 450px;
+      height: 280px;
+    }
   }
   @media(max-width: 500px) {
+    #shopify-section-{{ section.id }} .section-content .title-box {
+      padding-top: 122px;
+    }
     #shopify-section-{{ section.id }} .image-box img {
       width: 340px;
     }
@@ -140,37 +194,151 @@
       width: 60px;
       right: 10px;
     }
-  }
 
+    /* video custom style css */
+    #shopify-section-{{ section.id }} .section-content {
+      padding-top: 125px;
+    }
+    #shopify-section-{{ section.id }} .video_link{
+      margin-bottom: -185px;
+    }
+    #shopify-section-{{ section.id }} .video_link .video-section {
+      width: 350px;
+      height: 250px;
+    }
+  }
 {% endstyle %}
 
-<div class="section-content">
-  <img src="{{ 'white_circle.png' | asset_url }}" class="section-top-image">
-  <div class="page-width main-content">
-    <div class="text-box">
-      <div class="title-box">
-        {% if section.settings.heading != blank %}
-          <h1 class="heading">{{ section.settings.heading }}</h1>
-          {% if section.settings.title_image != blank %}
-            <img src="{{ section.settings.title_image | image_url: width: 1000 }}">
+<div class="section-wrap">
+  {%- if section.settings.video_url != blank -%}
+    <div class="video_link">
+      <div class="video-section isolate">
+        <noscript>
+          <div
+            class="video-section__media"
+            {% if section.settings.cover_image != blank %}
+              style="padding-bottom: {{ 1 | divided_by: section.settings.cover_image.aspect_ratio | times: 100 }}%;"
+            {% endif %}
+          >
+            <a
+              href="{{ section.settings.video_url }}"
+              class="video-section__poster media media--transparent media--landscape{% if section.settings.cover_image == blank %} video-section__placeholder{% endif %}"
+            >
+              {%- if section.settings.cover_image != blank -%}
+                {%- capture sizes -%}
+                  {% if section.settings.full_width -%}
+                    100vw
+                  {%- else -%}
+                    (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px)
+                    calc(100vw - 10rem), 100vw
+                  {%- endif %}
+                {%- endcapture -%}
+                {%- assign alt = 'sections.video.load_video' | t: description: section.settings.description | escape -%}
+                {{
+                  section.settings.cover_image
+                  | image_url: width: 3840
+                  | image_tag:
+                    loading: 'lazy',
+                    sizes: sizes,
+                    widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                    alt: alt
+                }}
+              {%- else -%}
+                {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+              {%- endif -%}
+            </a>
+          </div>
+        </noscript>
+        <deferred-media
+          class="video-section__media deferred-media no-js-hidden gradient global-media-settings{% if section.settings.full_width %} global-media-settings--full-width{% endif %}"
+          data-media-id="{{ section.settings.video_url.id }}"
+          {% if section.settings.cover_image != blank %}
+            style="padding-bottom: {{ 1 | divided_by: section.settings.cover_image.aspect_ratio | times: 100 }}%;"
           {% endif %}
-        {% endif %}
-      </div>
-      <div class="block-content">
-        {% if section.blocks.size > 0 %}
-          {% for block in section.blocks %}
-            <div class="item">
-              <h4 class="block-title">{{ block.settings.heading }}</h4>
-              <div class="block-text">{{ block.settings.text }}</div>
-            </div>
-          {% endfor %}
-        {% endif %}
+        >
+          <button
+            id="Deferred-Poster-Modal-{{ section.settings.video_url.id }}"
+            class="video-section__poster media deferred-media__poster media--landscape"
+            type="button"
+            aria-label="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
+          >
+            {%- if section.settings.cover_image != blank -%}
+              {%- capture sizes -%}
+                {% if section.settings.full_width -%}
+                  100vw
+                {%- else -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px)
+                  calc(100vw - 10rem), 100vw
+                {%- endif %}
+              {%- endcapture -%}
+              {%- assign alt = 'sections.video.load_video' | t: description: section.settings.description | escape -%}
+              {{
+                section.settings.cover_image
+                | image_url: width: 3840
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: sizes,
+                  widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                  alt: alt
+              }}
+            {%- else -%}
+              {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+            {%- endif -%}
+            <span class="deferred-media__poster-button motion-reduce">
+              {%- render 'icon-play' -%}
+            </span>
+          </button>
+          <template>
+            {%- if section.settings.video_url.type == 'youtube' -%}
+              <iframe
+                src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1"
+                class="js-youtube"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="{{ section.settings.description | escape }}"
+              ></iframe>
+            {%- else -%}
+              <iframe
+                src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}"
+                class="js-vimeo"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="{{ section.settings.description | escape }}"
+              ></iframe>
+            {%- endif -%}
+          </template>
+        </deferred-media>
       </div>
     </div>
-    <div class="image-box">
-      {% if section.settings.image != blank %}
-        <img src="{{ section.settings.image | image_url: width: 1000 }}">
-      {% endif %}
+  {%- endif -%}
+  <div class="section-content">
+    <img src="{{ 'white_circle.png' | asset_url }}" class="section-top-image">
+    <div class="page-width main-content">
+      <div class="text-box">
+        <div class="title-box">
+          {% if section.settings.heading != blank %}
+            <h1 class="heading">{{ section.settings.heading }}</h1>
+            {% if section.settings.title_image != blank %}
+              <img src="{{ section.settings.title_image | image_url: width: 1000 }}">
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class="block-content">
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              <div class="item">
+                <h4 class="block-title">{{ block.settings.heading }}</h4>
+                <div class="block-text">{{ block.settings.text }}</div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="image-box">
+        {% if section.settings.image != blank %}
+          <img src="{{ section.settings.image | image_url: width: 1000 }}">
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
@@ -194,6 +362,24 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Video show"
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "t:sections.video.settings.cover_image.label"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "t:sections.video.settings.video_url.label",
+      "placeholder": "t:sections.video.settings.video_url.placeholder",
+      "info": "t:sections.video.settings.video_url.info"
     }
   ],
   "blocks": [

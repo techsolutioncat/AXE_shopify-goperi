@@ -3,6 +3,7 @@
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
+        "back_product_page": "peri-oral-health-test-kit",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -16,7 +17,9 @@
         },
         "buttons": {
           "type": "buttons",
-          "settings": {}
+          "settings": {
+            "txt__btn-checkout": "Checkout"
+          }
         }
       },
       "block_order": [

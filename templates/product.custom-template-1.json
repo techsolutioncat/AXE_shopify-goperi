@@ -14,7 +14,7 @@
             "text_style": "subtitle"
           }
         },
-        "7e7c4dbb-a79e-4343-aece-56f141eeb877": {
+        "aa00c8ee-e348-4fde-8b3f-5549261228b4": {
           "type": "shopify:\/\/apps\/yotpo-product-photo-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
             "product": "peri-oral-health-test-kit"
@@ -38,11 +38,6 @@
             "text_style": "body"
           }
         },
-        "dd49cd5c-613a-4433-b27f-b4417cd539b8": {
-          "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-product-page-widget\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
-          "disabled": true,
-          "settings": {}
-        },
         "66e8f824-4d88-4317-a825-ae28b91d9e34": {
           "type": "buy_buttons",
           "settings": {
@@ -54,17 +49,14 @@
       "block_order": [
         "title",
         "ccdb6597-a00e-432d-9dc1-eab3a0a7c6de",
-        "7e7c4dbb-a79e-4343-aece-56f141eeb877",
+        "aa00c8ee-e348-4fde-8b3f-5549261228b4",
         "42ae9564-5ade-4774-8278-1d8ca5ac8b77",
         "62529b11-36cc-49e2-ac38-8ac9ded1c423",
         "499082fd-c041-4a68-a1a7-fc1370ecbe6e",
-        "dd49cd5c-613a-4433-b27f-b4417cd539b8",
         "66e8f824-4d88-4317-a825-ae28b91d9e34"
       ],
       "custom_css": [],
       "settings": {
-        "display_video": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "enable_sticky_info": false,
         "media_size": "medium",
         "constrain_to_viewport": false,
@@ -147,7 +139,7 @@
         "heading": "What you’ll discover",
         "title_image": "shopify:\/\/shop_images\/Component_2_1.png",
         "image": "shopify:\/\/shop_images\/1234.png",
-        "video_url": ""
+        "video_url": "https:\/\/youtu.be\/EwnjUZO2LXc"
       }
     },
     "process": {
@@ -214,7 +206,7 @@
       ],
       "settings": {
         "heading": "Simply put, dental health is overall health",
-        "text_align": "text_left",
+        "text_align": "text_center",
         "title_image": "shopify:\/\/shop_images\/arrw.jpg",
         "list_text": "We measure the bacteria in your mouth that has been linked to:",
         "image": "shopify:\/\/shop_images\/second_moc.png",

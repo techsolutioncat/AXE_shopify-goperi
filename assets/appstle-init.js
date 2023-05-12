@@ -1,4 +1,3 @@
-
 (function (window, k) {
     if (!window.AppstleIncluded && (!urlIsProductPage() || 'V1' === 'V2')) {
       window.AppstleIncluded = true;
@@ -14,12 +13,11 @@
             callback && callback();
           }
         };
-
             document.getElementsByTagName("body")[0].appendChild(script)
       };
 
 
-      appstleLoadScript("https://cdn.shopify.com/s/files/1/0738/3436/5229/t/4/assets/appstle-subscription.js?v=1683144890");
+      appstleLoadScript("https://cdn.shopify.com/s/files/1/0738/3436/5229/t/3/assets/appstle-subscription.js?v=1683484072");
 
 
       window.RS = Window.RS || {};
@@ -41,13 +39,13 @@
         "useUrlWithCustomerId": "true",
         "atcButtonSelector": "div.product-form__buttons",
         "moneyFormat": "{% raw %}${{amount}}{% endraw %}",
-        "oneTimePurchaseText": "One Time Purchase",
+        "oneTimePurchaseText": "Single Test",
         "shop": "goperi.myshopify.com",
         "deliveryText": "delivery",
-        "purchaseOptionsText": "Purchase Options",
+        "purchaseOptionsText": "",
         "manageSubscriptionButtonText": "Manage Subscription",
-        "subscriptionOptionText": "Subscribe and save",
-        "sellingPlanSelectTitle": "DELIVERY FREQUENCY",
+        "subscriptionOptionText": "Subscribe and save $20",
+        "sellingPlanSelectTitle": "",
         "subscriptionPriceDisplayText": "",
         "tooltipTitle": "Subscription detail",
         "showTooltipOnClick": "false",
@@ -63,12 +61,12 @@
         "memberOnlySellingPlansJson": {},
         "nonMemberOnlySellingPlansJson": {},
         "widgetEnabled": true,
-        "showTooltip" : true,
-        "sortByDefaultSequence": false,
+        "showTooltip" : false,
+        "sortByDefaultSequence": true,
         "showSubOptionBeforeOneTime": false,
         "showStaticTooltip": false,
         "showAppstleLink": true,
-        "sellingPlanTitleText" : "{{sellingPlanName}} ({{sellingPlanPrice}}\/delivery)",
+        "sellingPlanTitleText" : "",
         "oneTimePriceText" : "{{price}}",
         "selectedPayAsYouGoSellingPlanPriceText" : "{{price}}",
         "selectedPrepaidSellingPlanPriceText" : " {{totalPrice}}",
@@ -78,7 +76,7 @@
         "appstlePlanId": 163,
         "showCheckoutSubscriptionBtn": true,
         "disableLoadingJquery": false,
-        "widgetEnabledOnSoldVariant": "false",
+        "widgetEnabledOnSoldVariant": "true",
         "switchRadioButtonWidget": false,
         "appstlePlanName": "BUSINESS",
         "appstlePlanFeatures": {
@@ -131,7 +129,7 @@
         "scriptLoadDelay": "0",
         "formatMoneyOverride": "false",
         "appstle_app_proxy_path_prefix": "apps\/subscriptions",
-        "updatePriceOnQuantityChange": "",
+        "updatePriceOnQuantityChange": "false",
         "widgetParentSelector": "",
         "quantitySelector": "",
         "enableAddJSInterceptor": "false",
@@ -193,7 +191,7 @@
             "appstle_selected_background": {
                 "background": "transparent",
             },
-            "customCSS": "",
+            "customCSS": "#appstle_subscription_widget0 {\n   max-width: 100% !important;\n}\n\n#appstle_subscription_widget0 .appstle_subscription_wrapper {\n    border: none !important;\n}\n\n#appstle_subscription_widget0 .appstle_hide_subsOption {\n    opacity: unset;\n    padding-top: 25px !important;\n    visibility: visible;\n    height: auto;\n}\n\n.appstle_subscription_wrapper_option {\n     border: solid 3px #8FCAE4 !important;\n    border-radius: 35px;\n}\n\n.appstle_one_time_text,\n.appstle_subscribe_save_text,\n.appstle_subscription_amount  {\n   font-family: \"Acumin-Pro\" !important;\n   font-size: 22px !important;\n}\n\n.appstle_one_time_text,\n.appstle_subscribe_save_text {\n   margin-left: 18px;\n}\n\n#appstle_subscription_widget0 .appstle_circle {\n    height: 27px;\n    width: 27px;\n    border: 2px solid #8FCAE4;\n}\n\n#appstle_subscription_widget0 .appstle_subscription_wrapper_option input[type=radio]:checked + label .appstle_circle .appstle_dot {\n    height: 17px;\n    width: 17px;\n    background-color: #7CCCE7;\n}\n#appstle_subscription_widget0 .appstle_subscription_wrapper_option {\n    margin-top: 26px;\n}\n.appstleSellingPlanDescription {\n   font-family: \"Acumin-Pro\" !important;\n   font-size: 18px !important;\n}\n.appstle_subscription_amount_wrapper .appstle_subscription_amount {\n    position: absolute;\n    right: 16px;\n    bottom: 16px;\n}\n.appstle_circle:before {\n    display: none !important;\n}\n#appstle_subscription_widget0 .appstle_subscribe_option {\n    margin-left: 55px;\n    padding-top: 25px;\n    margin-top: 0px;\n    border-top: solid 1px #8FCAE4;\n}\n#appstle_subscription_widget0 .appstle_hide_subsOption {\n   padding-top: 0px;\n}\n#appstle_subscription_widget0 .appstle_subscription_wrapper {\n      margin-top: 55px;\n }\n@media(max-width: 1000px) {\n\n  .appstle_one_time_text,\n  .appstle_subscribe_save_text,\n  .appstle_subscription_amount {\n    font-size: 16px !important;\n  }\n\n  .appstleSellingPlanDescription {\n    font-size: 12px !important;\n  }\n\n  #appstle_subscription_widget0 .appstle_circle {\n    height: 16px;\n    width: 16px;\n  }\n\n  #appstle_subscription_widget0 .appstle_subscription_wrapper_option input[type=radio]:checked+label .appstle_circle .appstle_dot {\n    height: 10px;\n    width: 10px;\n    background-color: #7CCCE7;\n  }\n   #appstle_subscription_widget0 .appstle_subscribe_option {\n     margin-left: 34px;\n   }\n   .appstle_one_time_text, .appstle_subscribe_save_text {\n      margin-left: 8px;\n   }\n   .appstle_subscription_wrapper_option {\n    border: solid 2px #8FCAE4 !important;\n   }\n}",
             "elementCSS": "[]",
             "customerPortalCss": "",
             "priceSelector": "span.price-item.price-item--regular",

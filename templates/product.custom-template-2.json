@@ -40,7 +40,6 @@
         },
         "dd49cd5c-613a-4433-b27f-b4417cd539b8": {
           "type": "shopify:\/\/apps\/appstle-subscriptions\/blocks\/appstle-subscription-product-page-widget\/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
-          "disabled": true,
           "settings": {}
         },
         "66e8f824-4d88-4317-a825-ae28b91d9e34": {
@@ -63,8 +62,8 @@
       ],
       "custom_css": [],
       "settings": {
-        "display_video": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "display_video": true,
+        "video_url": "https:\/\/youtu.be\/EwnjUZO2LXc",
         "enable_sticky_info": false,
         "media_size": "medium",
         "constrain_to_viewport": false,
@@ -214,7 +213,7 @@
       ],
       "settings": {
         "heading": "Simply put, dental health is overall health",
-        "text_align": "text_left",
+        "text_align": "text_center",
         "title_image": "shopify:\/\/shop_images\/arrw.jpg",
         "list_text": "We measure the bacteria in your mouth that has been linked to:",
         "image": "shopify:\/\/shop_images\/second_moc.png",

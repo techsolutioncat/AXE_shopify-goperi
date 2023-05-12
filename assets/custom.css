@@ -56,26 +56,35 @@
 }
 
 .yotpo-sr-bottom-line-text {
-    font-size: 15px !important;
+    font-size: 18px !important;
     font-family: 'RocGrotesk-Regular' !important;
     font-weight: normal !important;
     margin-top: 5px;
+    cursor: pointer;
 }
 
+.yotpo-head, .yotpo-head h2.section_title {
+    margin-top: 0px !important;
+}
 .yotpo-sr-bottom-line-summary {
     margin-top: -20px;
 }
 
 .yotpo-sr-bottom-line-summary svg {
-    width: 21px;
-    height: 21px;
+    width: 19px;
+    height: 19px;
 }
-
+.yotpo-reviews-star-ratings-widget {
+    margin-top: 30px;
+}
 .yotpo-sr-bottom-line-summary path {
     stroke: #FDC965;
+    fill: #fdc965;
     width: 21px !important;
 }
-
+#shopify-section-template--19018991010093__168269408902ee41ed {
+    padding-top: 0px;
+}
 .product-form__buttons span.hd {
     font-family: 'RocGrotesk-Bold' !important;
     font-weight: bold;

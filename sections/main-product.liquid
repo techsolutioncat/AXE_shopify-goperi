@@ -90,7 +90,8 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
-              {% comment %} {% render block %} {% endcomment %}
+              {% render block %}
+              {% comment %}
               <div class="yotpo bottomLine"
                 data-appkey="Xfh4bhJmo7WIeCQELfwSuNIvYt2Sd7K2PSJbaEAg"
                 data-domain="{{shop.permanent_domain | escape }}"
@@ -102,6 +103,7 @@
                 data-description="{{ product.description | escape }}"
                 data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
               </div>
+              {% endcomment %}
             {%- when 'text' -%}
               <p
                 class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -545,7 +547,12 @@
     });
 
     window.addEventListener("load", (event) => {
-      $('.yotpo[data-yotpo-element-id=2]').css('display', 'none');
+      $('#yotpo-app .yotpo-head').attr('style', 'display: flex;flex-direction: column; gap: 10px;');
+      $('#yotpo-app .yotpo-head .yotpo-headline').attr('style', 'margin-left: 0px;');
+      var reviewtitle = '<h2 class="section_title text-center" style="font-family: RocGrotesk-Bold;font-size: 44px;line-height: 60px;margin-top: 70px;">Read our glowing reviews</h2>';
+      $(reviewtitle).insertBefore('#yotpo-app .yotpo-head .yotpo-headline');
+
+      {% comment %} $('.yotpo[data-yotpo-element-id=2]').css('display', 'none'); {% endcomment %}
       var styleAttr = 'font-family: Acumin-Pro!important; font-size: 18px; color:#000 !important; margin-top: 3px;';
 
       $('.yotpo[data-yotpo-element-id=1] .star-clickable a').attr('style', styleAttr);
@@ -1973,6 +1980,21 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_video",
+      "default": false,
+      "label": "Display video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "t:sections.video.settings.video_url.label",
+      "placeholder": "t:sections.video.settings.video_url.placeholder",
+      "info": "t:sections.video.settings.video_url.info"
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",
