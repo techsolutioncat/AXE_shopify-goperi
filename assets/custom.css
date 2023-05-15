@@ -82,7 +82,7 @@
     fill: #fdc965;
     width: 21px !important;
 }
-#shopify-section-template--19018991010093__168269408902ee41ed {
+.shopify-section.section:has(#yotpo-reviews-main-widget) {
     padding-top: 0px;
 }
 .product-form__buttons span.hd {

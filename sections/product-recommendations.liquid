@@ -84,11 +84,14 @@
       margin-left: -206px;
     }
   }
-  @media(max-width: 1600px) {
+  @media(max-width: 1650px) {
     #shopify-section-{{ section.id }} .image-box img {
       margin-left: -150px;
       margin-top: 394px;
       width: 560px;
+    }
+    #shopify-section-{{ section.id }} .section-top-image {
+      right: 165px;
     }
   }
   @media(max-width: 1440px) {
@@ -108,6 +111,11 @@
       right: 135px;
       position: absolute;
       top: -70px;
+    }
+  }
+  @media(max-width: 1300px) {
+    #shopify-section-{{ section.id }} .section-top-image {
+      right: 50px;
     }
   }
   @media(max-width: 1000px) {
@@ -284,9 +292,28 @@
             {%- else -%}
               {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
             {%- endif -%}
-            <span class="deferred-media__poster-button motion-reduce">
-              {%- render 'icon-play' -%}
-            </span>
+            {% comment %} <span class="deferred-media__poster-button motion-reduce"> {% endcomment %}
+            {% comment %} {%- render 'icon-play' -%} {% endcomment %}
+            <div
+              class="play-button"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <svg
+                width="118"
+                height="119"
+                viewBox="0 0 118 119"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="z-[1] absolute"
+              >
+                <path d="M59 0.100586C26.4654 0.100586 0 26.5685 0 59.1006C0 91.6326 26.4654 118.101 59 118.101C91.5346 118.101 118 91.6326 118 59.1006C118 26.5685 91.5346 0.100586 59 0.100586ZM82.455 61.1677L48.0384 83.2927C47.6351 83.5542 47.1693 83.684 46.7084 83.684C46.3051 83.684 45.8969 83.583 45.5321 83.3839C44.7397 82.9518 44.25 82.1258 44.25 81.2256V36.9756C44.25 36.0754 44.7397 35.2494 45.5321 34.8172C46.3099 34.39 47.2846 34.4162 48.0384 34.9085L82.455 57.0335C83.1561 57.4848 83.5834 58.2651 83.5834 59.1006C83.5834 59.936 83.1561 60.7162 82.455 61.1677Z" fill="white"></path>
+              </svg>
+            </div>
+            {% comment %} </span> {% endcomment %}
           </button>
           <template>
             {%- if section.settings.video_url.type == 'youtube' -%}

@@ -63,6 +63,7 @@
       "custom_css": [],
       "settings": {
         "display_video": true,
+        "cover_image": "shopify:\/\/shop_images\/1682616725398_exported_17.jpg",
         "video_url": "https:\/\/youtu.be\/EwnjUZO2LXc",
         "enable_sticky_info": false,
         "media_size": "medium",

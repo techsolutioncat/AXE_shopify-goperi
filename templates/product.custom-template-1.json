@@ -57,6 +57,8 @@
       ],
       "custom_css": [],
       "settings": {
+        "display_video": false,
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "enable_sticky_info": false,
         "media_size": "medium",
         "constrain_to_viewport": false,
@@ -139,6 +141,7 @@
         "heading": "What you’ll discover",
         "title_image": "shopify:\/\/shop_images\/Component_2_1.png",
         "image": "shopify:\/\/shop_images\/1234.png",
+        "cover_image": "shopify:\/\/shop_images\/1682616725398_exported_17.jpg",
         "video_url": "https:\/\/youtu.be\/EwnjUZO2LXc"
       }
     },
