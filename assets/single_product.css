@@ -495,7 +495,7 @@ ul.social_link li:last-child {
     }
 
     header.header.custom_header.header--mobile-left.page-width.header--has-menu {
-        padding: 6px 16px;
+        padding: 6px 16px 0px 16px;
     }
 
     a.header__heading-link.link.link--text.focus-inset {

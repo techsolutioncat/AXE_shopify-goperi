@@ -16,6 +16,7 @@
     padding-top: 180px;
     padding-bottom: 50px;
   }
+
   #shopify-section-{{ section.id }} .section-content h1.heading {
     font-size: 64px;
     font-family: 'RocGrotesk-Bold';
@@ -50,6 +51,7 @@
 
   #shopify-section-{{ section.id }} .section-content .item {
     width: calc(50% - 20px);
+    /* width: 100%; */
   }
   #shopify-section-{{ section.id }} .image-box img {
     width: 700px;
@@ -156,11 +158,16 @@
     }
   }
   @media(max-width: 768px) {
+    {%- if section.settings.video_url == blank -%}
+      #shopify-section-{{ section.id }} .section-content .title-box {
+        padding-top: 0px;
+      }
+    {%- endif -%}
     #shopify-section-{{ section.id }} .section-content .text-box .block-title * {
       font-size: 16px;
     }
     #shopify-section-{{ section.id }} .section-content .text-box .block-text * {
-      font-size: 11px;
+      font-size: 14px;
     }
     #shopify-section-{{ section.id }} .section-content h1.heading {
       font-size: 27px;
@@ -171,6 +178,10 @@
     }
     #shopify-section-{{ section.id }} .section-content .title-box {
       padding-bottom: 0px;
+    }
+    #shopify-section-{{ section.id }} .section-content .item {
+      /* width: calc(50% - 20px); */
+      width: 100%;
     }
 
     /* video custom style css */
@@ -186,9 +197,11 @@
     }
   }
   @media(max-width: 500px) {
-    #shopify-section-{{ section.id }} .section-content .title-box {
-      padding-top: 122px;
-    }
+    {%- if section.settings.video_url != blank -%}
+      #shopify-section-{{ section.id }} .section-content .title-box {
+        padding-top: 122px;
+      }
+    {%- endif -%}
     #shopify-section-{{ section.id }} .image-box img {
       width: 340px;
     }
@@ -200,13 +213,18 @@
     }
     #shopify-section-{{ section.id }} .section-top-image {
       width: 60px;
-      right: 10px;
+      right: 50px;
     }
 
     /* video custom style css */
     #shopify-section-{{ section.id }} .section-content {
-      padding-top: 125px;
+      padding-top: 55px;
     }
+    {%- if section.settings.video_url != blank -%}
+      #shopify-section-{{ section.id }} .section-content {
+        padding-top: 125px;
+      }
+    {%- endif -%}
     #shopify-section-{{ section.id }} .video_link{
       margin-bottom: -185px;
     }

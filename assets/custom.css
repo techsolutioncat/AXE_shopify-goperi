@@ -94,7 +94,9 @@
     justify-content: center;
     align-items: center;
 }
-
+.yotpo-display-s .yotpo-review, .yotpo-media-modal .yotpo-review {
+    padding: 0px 30px;
+}
 /* Begin Header custom style css */
 @media (max-width: 989px) {
     header.header--mobile-left {
@@ -108,5 +110,10 @@
     }
     .product-form__buttons {
         margin-top: 0px;
+    }
+
+    #menu-drawer {
+        max-width: 256px;
+        border: none;
     }
 }
