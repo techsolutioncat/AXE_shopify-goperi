@@ -57,18 +57,31 @@ menu-drawer > details[open] > summary::before {
   );
 }
 
-.js details[open] > .menu-drawer,
+/* .js details[open] > .menu-drawer,
 .js details[open] > .menu-drawer__submenu {
   transition: transform var(--duration-default) ease,
     visibility var(--duration-default) ease;
-}
+} */
 
 .no-js details[open] > .menu-drawer,
 .js details[open].menu-opening > .menu-drawer,
 details[open].menu-opening > .menu-drawer__submenu {
   /* transform: translateX(0); */
-  transform: translateX(calc(100vw - 256px));
-  visibility: visible;
+  /* transform: translateX(calc(100vw - 256px)); */
+  /* visibility: visible; */
+  /* transition: transform 1s ease-in-out; */
+  animation: move .3s forwards;
+}
+
+@keyframes move{
+  0%{
+    visibility: visible;
+    transform: translateX(100vw);
+  }
+  100%{
+    visibility: visible;
+    transform: translateX(calc(100vw - 256px));
+  }
 }
 
 .js .menu-drawer__navigation .submenu-open {

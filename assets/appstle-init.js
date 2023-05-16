@@ -17,7 +17,7 @@
       };
 
 
-      appstleLoadScript("https://cdn.shopify.com/s/files/1/0738/3436/5229/t/3/assets/appstle-subscription.js?v=1683484072");
+      appstleLoadScript("https://cdn.shopify.com/s/files/1/0738/3436/5229/t/3/assets/appstle-subscription.js?v=1684163583");
 
 
       window.RS = Window.RS || {};
@@ -60,6 +60,7 @@
         "totalPricePerDeliveryText" : "{{prepaidPerDeliveryPrice}}\/delivery",
         "memberOnlySellingPlansJson": {},
         "nonMemberOnlySellingPlansJson": {},
+        "sellingPlansJson": [{"frequencyCount":6,"frequencyInterval":"MONTH","billingFrequencyCount":6,"billingFrequencyInterval":"MONTH","frequencyName":"Subscribe \u0026 Save $20","frequencyDescription":"1 test every 6 months","afterCycle1":0,"afterCycle2":0,"discountEnabled":false,"discountEnabled2":false,"discountEnabledMasked":false,"discountEnabled2Masked":false,"id":"gid://shopify/SellingPlan/685276856621","frequencyType":"ON_PURCHASE_DAY","specificDayEnabled":false,"cutOff":0,"prepaidFlag":"false","idNew":"gid://shopify/SellingPlan/685276856621","planType":"PAY_AS_YOU_GO","deliveryPolicyPreAnchorBehavior":"ASAP","freeTrialEnabled":false,"memberOnly":false,"nonMemberOnly":false,"formFieldJson":"null","appstleCycles":[]},{"frequencyCount":6,"frequencyInterval":"MONTH","billingFrequencyCount":6,"billingFrequencyInterval":"MONTH","frequencyName":"Subscribe and Save $20","frequencyDescription":"1 test every 6 months","discountOffer":20.0,"afterCycle1":0,"discountType":"FIXED","discountEnabled":true,"discountEnabledMasked":true,"id":"gid://shopify/SellingPlan/685446594861","frequencyType":"ON_PURCHASE_DAY","specificDayEnabled":false,"cutOff":0,"prepaidFlag":"false","idNew":"gid://shopify/SellingPlan/685446594861","planType":"PAY_AS_YOU_GO","deliveryPolicyPreAnchorBehavior":"ASAP","freeTrialEnabled":false,"memberOnly":false,"nonMemberOnly":false,"formFieldJson":"null","appstleCycles":[]}],
         "widgetEnabled": true,
         "showTooltip" : false,
         "sortByDefaultSequence": true,

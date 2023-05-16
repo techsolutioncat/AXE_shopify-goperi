@@ -405,13 +405,18 @@ ul.social_link li:last-child {
         font-size: 31px;
         line-height: 43px;
     }
-
+    section.oral_plan .bb {
+        flex-direction: column;
+        gap: 10px;
+    }
     section.oral_plan .col-md-5.col-lg-5 {
-        width: 40%;
+        width: 100%;
+        padding: 0px;
     }
 
     section.oral_plan .col-md-7.col-lg-7 {
-        width: 60%;
+        width: 100%;
+        padding: 0px;
     }
 
     section.oral_plan h4 {
