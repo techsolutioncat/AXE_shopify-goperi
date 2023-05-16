@@ -37,10 +37,11 @@ p.product__text.inline-richtext.subtitle,
 .product__description.rte.quick-add-hidden {
     color: #000;
 }
-p.product__text.inline-richtext.subtitle
-{
+
+p.product__text.inline-richtext.subtitle {
     font-weight: bolder;
 }
+
 p,
 .product__description.rte.quick-add-hidden {
     font-family: 'Acumin-Pro' !important;
@@ -84,6 +85,7 @@ label.ads1 span.pri_ce span.apne0 {
 /* .custom_header nav.header__inline-menu li a:hover span, */
 .custom_header nav.header__inline-menu li a span.header__active-menu-item,
 .custom_header nav.header__inline-menu li:first-child a span
+
 /* .custom_header nav.header__inline-menu li summary.list-menu__item:hover */
     {
     background-color: #e5f98e;
@@ -272,6 +274,7 @@ ul.social_link li {
     float: left;
     margin: 0 8px 0 0;
 }
+
 ul.social_link li:last-child {
     margin: 0px;
 }
@@ -402,13 +405,18 @@ ul.social_link li:last-child {
         font-size: 31px;
         line-height: 43px;
     }
-
+    section.oral_plan .bb {
+        flex-direction: column;
+        gap: 10px;
+    }
     section.oral_plan .col-md-5.col-lg-5 {
-        width: 40%;
+        width: 100%;
+        padding: 0px;
     }
 
     section.oral_plan .col-md-7.col-lg-7 {
-        width: 60%;
+        width: 100%;
+        padding: 0px;
     }
 
     section.oral_plan h4 {
@@ -492,7 +500,7 @@ ul.social_link li:last-child {
     }
 
     header.header.custom_header.header--mobile-left.page-width.header--has-menu {
-        padding: 6px 16px;
+        padding: 6px 16px 0px 16px;
     }
 
     a.header__heading-link.link.link--text.focus-inset {
@@ -532,7 +540,7 @@ ul.social_link li:last-child {
         float: right;
         display: flow-root; */
     }
-    
+
     fieldset.js.product-form__input label {
         font-size: 13px !important;
         padding: 20px 0 20px 50px !important;
@@ -553,6 +561,13 @@ ul.social_link li:last-child {
         left: 0;
         top: 5px;
         transform: translate(10px);
+    }
+}
+
+@media (max-width: 1300px) {
+    header.header.custom_header.header--mobile-left.page-width.header--has-menu {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
     }
 }
 

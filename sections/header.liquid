@@ -121,6 +121,26 @@
   summary.header__icon.header__icon--menu.header__icon--summary.link.focus-inset[aria-expanded=true] svg.icon-close {
     display: none;
   }
+  @media (max-width: 989px) {
+    .list-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .list-menu li * {
+      font-family: 'RocGrotesk-Regular';
+      font-size: 17px;
+      background: none;
+    }
+    .list-menu li:first-child{
+      background: #e5f98e;
+      border-radius: 30px;
+    }
+  }
 </style>
 
 {%- style -%}
@@ -600,8 +620,8 @@
                 <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu has-submenu list-menu" role="list">
                     {%- for link in section.settings.menu.links -%}
-                      <li>
-                        {%- if link.links != blank -%}
+                      {% comment %} <li> {% endcomment %}
+                        {% comment %} {%- if link.links != blank -%}
                           <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                             <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                               {{ link.title | escape }}
@@ -655,8 +675,23 @@
                           <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                             {{ link.title | escape }}
                           </a>
+                        {%- endif -%} {% endcomment %}
+                        {%- if link.links != blank -%}
+                          {%- for childlink in link.links -%}
+                            <li>
+                              <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                {{ childlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        {%- else -%}
+                          <li>
+                            <a href="{{ link.url }}" class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                              {{ link.title | escape }}
+                            </a>
+                          </li>
                         {%- endif -%}
-                      </li>
+                      {% comment %} </li> {% endcomment %}
                     {%- endfor -%}
                   </ul>
                 </nav>
